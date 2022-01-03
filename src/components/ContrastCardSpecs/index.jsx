@@ -5,6 +5,9 @@ import CopyButton from '../CopyButton'
 
 const ContrastCardSpecsContainer = styled.div`
   padding: 0 30px 10px 30px;
+  @media only screen and (max-width: 768px) {
+    padding: 0 14px 10px 14px;
+  }
 `
 
 function ContrastCardSpecs({ foreground, background }) {

@@ -9,11 +9,16 @@ const CopyBtn = styled.button`
   border: none;
   outline: none;
   padding: 16px;
-  min-width: 168px;
+  /* min-width: 168px; */
+  /* width: 40%; */
   width: 100%;
   font-weight: ${props => props.bold ? 'bold' : 'normal'};
   margin-top: ${props => props.mt ? props.mt : 'unset'};
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    /* min-width: 148px; */
+  }
 `
 
 function CopyButton({ text, bold, mt }) {

@@ -4,7 +4,8 @@ import styled from "styled-components"
 const ContrastCardResultContainer = styled.div`
   background: ${props => props.background};
   border-radius: 5px;
-  padding: 48px 60px;
+  /* padding: 48px 60px; */
+  padding: 40px 50px;
   h2 {
     font-size: 20px;
     font-weight: 600;
@@ -24,7 +25,13 @@ const ContrastCardResultContainer = styled.div`
     margin-bottom: 26px;
   }
   button {
-
+    outline: none;
+    border: 1px solid ${props => props.foreground};
+    color: ${props => props.foreground};
+    background-color: transparent;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 3px;
   }
 `
 

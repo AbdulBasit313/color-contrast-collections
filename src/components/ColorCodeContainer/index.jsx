@@ -14,7 +14,8 @@ const ColorCodeTitle = styled.p`
 
 const ColorCodeWrapper = styled(AppBorder)`
   padding: 5px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
 `
 
 function ColorCodeContainer({ title, code }) {

@@ -40,3 +40,6 @@ export const AppBorder = styled.div`
 export const mt24 = styled.div`
   margin-top: 24px;
 `
+export const ContrastCardsWrapper = styled.div`
+  margin-bottom: 70px;
+`
