@@ -10,6 +10,9 @@ const FooterStyle = styled.footer`
   p {
     color: #000000;
     font-size: 14px;
+    @media only screen and (max-width: 768px) {
+    margin-top: 11px;
+  }
     span {
       color: #F4B400;
     }
@@ -37,6 +40,10 @@ const FlexBW = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `
 
 function Footer() {

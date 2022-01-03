@@ -10,6 +10,9 @@ const ColorCodeTitle = styled.p`
   color: #000000;
   margin-top: 14px;
   margin-bottom: 11px;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const ColorCodeWrapper = styled(AppBorder)`

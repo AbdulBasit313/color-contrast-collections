@@ -17,7 +17,7 @@ const CopyBtn = styled.button`
   cursor: pointer;
 
   @media only screen and (max-width: 768px) {
-    /* min-width: 148px; */
+    padding: 10px;
   }
 `
 

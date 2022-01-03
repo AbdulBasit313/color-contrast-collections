@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import useWindowSize from '../../hooks/useWindowSize'
 import ColorCodeContainer from '../ColorCodeContainer'
 import CopyButton from '../CopyButton'
 
@@ -10,12 +11,14 @@ const ContrastCardSpecsContainer = styled.div`
   }
 `
 
-function ContrastCardSpecs({ foreground, background }) {
+const ContrastCardSpecs = ({ foreground, background }) => {
+  const [width] = useWindowSize()
+
   return (
     <ContrastCardSpecsContainer>
       <ColorCodeContainer title="Background Color" code={background} />
       <ColorCodeContainer title="Foreground Color" code={foreground} />
-      <CopyButton text="Copy Code" bold mt='24px' />
+      <CopyButton text="Copy Code" bold mt={width <= 768 ? '13px' : '24px'} />
     </ContrastCardSpecsContainer>
   )
 }

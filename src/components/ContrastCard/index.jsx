@@ -6,13 +6,13 @@ import ContrastCardSpecs from '../ContrastCardSpecs'
 
 const CardContainer = styled(AppBorder)`
   padding: 8px;
-  /* display: flex; */
   display: grid;
   grid-template-columns: 65fr 35fr;
   margin-top: 40px;
 
   @media only screen and (max-width: 768px) {
     display: block;
+    margin-top: 20px;
   }
 `
 

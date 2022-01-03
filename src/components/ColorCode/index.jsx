@@ -20,6 +20,10 @@ const ColorCodeResult = styled.div`
   height: 52px;
   border-radius: 5px;
   background-color: ${props => props.code};
+  @media only screen and (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
 `
 
 function ColorCode({ code }) {

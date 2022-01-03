@@ -4,12 +4,17 @@ import styled from "styled-components"
 const ContrastCardResultContainer = styled.div`
   background: ${props => props.background};
   border-radius: 5px;
-  /* padding: 48px 60px; */
   padding: 40px 50px;
+  @media only screen and (max-width: 768px) {
+    padding: 22px;
+  }
   h2 {
     font-size: 20px;
     font-weight: 600;
     color: ${props => props.foreground};
+    @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
   }
   h3 {
     font-size: 26px;
@@ -17,12 +22,21 @@ const ContrastCardResultContainer = styled.div`
     color: ${props => props.foreground};
     margin-top: 18px;
     margin-bottom: 26px;
+    @media only screen and (max-width: 768px) {
+    margin-bottom: 14px;
+    margin-top: 8px;
+    font-size: 16px;
+  }
   }
   p {
     font-size: 14px;
     font-weight: normal;
     color: ${props => props.foreground};
     margin-bottom: 26px;
+    @media only screen and (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
   }
   button {
     outline: none;
@@ -32,6 +46,11 @@ const ContrastCardResultContainer = styled.div`
     padding: 10px 14px;
     cursor: pointer;
     border-radius: 3px;
+    @media only screen and (max-width: 768px) {
+    border-radius: 2px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
   }
 `
 

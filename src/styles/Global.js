@@ -19,6 +19,8 @@ export const GlobalStyles = createGlobalStyle`
   h4,
   h5,
   h6,
+  ul,
+  li,
   p {
     padding: 0;
     margin: 0;
@@ -39,7 +41,13 @@ export const AppBorder = styled.div`
 
 export const mt24 = styled.div`
   margin-top: 24px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 13px;
+  }
 `
 export const ContrastCardsWrapper = styled.div`
   margin-bottom: 70px;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 `
