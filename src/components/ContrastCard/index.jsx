@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { device } from '../../styles/BreakPoints'
 import { AppBorder } from '../../styles/Global'
 import ContrastCardResult from '../ContrastCardResult'
 import ContrastCardSpecs from '../ContrastCardSpecs'
@@ -10,7 +11,7 @@ const CardContainer = styled(AppBorder)`
   grid-template-columns: 65fr 35fr;
   margin-top: 40px;
 
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     display: block;
     margin-top: 20px;
   }

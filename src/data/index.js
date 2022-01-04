@@ -12,12 +12,20 @@ export const data = [
     foreground: '#FCFCFC'
   },
   {
+    background: '#E0F0E5',
+    foreground: '#2B2839'
+  },
+  {
     background: '#6967CE',
     foreground: '#FCFCFC'
   },
   {
     background: '#4A154B',
     foreground: '#F3E7F3'
+  },
+  {
+    background: '#ECEB98',
+    foreground: '#3D3C0A'
   },
   {
     background: '#F6F9FC',
@@ -34,5 +42,9 @@ export const data = [
   {
     background: '#63D471',
     foreground: '#FFFFFF'
+  },
+  {
+    background: '#FFFAD1',
+    foreground: '#2B2839'
   },
 ]

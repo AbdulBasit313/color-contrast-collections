@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { device } from '../../styles/BreakPoints'
 
 const Code = styled.div`
   display: flex;
@@ -8,9 +9,9 @@ const Code = styled.div`
   span {
     margin: 0 auto;
     font-size: 14px;
-    color: #000000;
+    color: ${props => props.theme.colors.textColor};
     text-align: center;
-    @media only screen and (max-width: 768px) {
+    @media ${device.tablet} {
   }
  }
 `
@@ -20,7 +21,7 @@ const ColorCodeResult = styled.div`
   height: 52px;
   border-radius: 5px;
   background-color: ${props => props.code};
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     width: 35px;
     height: 35px;
   }

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { device } from "./BreakPoints"
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -11,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: ${props => props.theme.fonts.poppins}, sans-serif;
   } 
   h1,
   h2,
@@ -35,19 +36,19 @@ export const Container = styled.div`
 `
 
 export const AppBorder = styled.div`
-  border: 2px solid #FEF7E5;
+  border: 2px solid ${props => props.theme.colors.primary};
   border-radius: 5px;
 `
 
 export const mt24 = styled.div`
   margin-top: 24px;
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     margin-top: 13px;
   }
 `
 export const ContrastCardsWrapper = styled.div`
   margin-bottom: 70px;
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     margin-bottom: 30px;
   }
 `

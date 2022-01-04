@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { device } from '../../styles/BreakPoints'
 import { AppBorder } from '../../styles/Global'
 import ColorCode from '../ColorCode'
 import CopyButton from '../CopyButton'
@@ -7,10 +8,10 @@ import CopyButton from '../CopyButton'
 const ColorCodeTitle = styled.p`
   font-size: 16px;
   font-weight: 600;
-  color: #000000;
+  color: ${props => props.theme.colors.textColor};
   margin-top: 14px;
   margin-bottom: 11px;
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     font-size: 12px;
   }
 `

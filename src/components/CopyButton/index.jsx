@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../../styles/BreakPoints'
 
 const CopyBtn = styled.button`
-  background: #FEF7E5 0% 0% no-repeat padding-box;
+  background: ${props => props.theme.colors.primary};
   border-radius: 5px;
   font-size: 14px;
-  color: #000000;
+  color: ${props => props.theme.colors.textColor};
   border: none;
   outline: none;
   padding: 16px;
@@ -16,7 +17,7 @@ const CopyBtn = styled.button`
   margin-top: ${props => props.mt ? props.mt : 'unset'};
   cursor: pointer;
 
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     padding: 10px;
   }
 `

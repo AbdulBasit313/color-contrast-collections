@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from "styled-components"
 import useWindowSize from '../../hooks/useWindowSize'
+import { device } from '../../styles/BreakPoints'
 import ColorCodeContainer from '../ColorCodeContainer'
 import CopyButton from '../CopyButton'
 
 const ContrastCardSpecsContainer = styled.div`
   padding: 0 30px 10px 30px;
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     padding: 0 14px 10px 14px;
   }
 `

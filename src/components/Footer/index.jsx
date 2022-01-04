@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from "styled-components"
+import { device } from '../../styles/BreakPoints'
 import { Container } from '../../styles/Global'
 
 const FooterStyle = styled.footer`
   height: 81px;
-  background: #FEF7E5 0% 0% no-repeat padding-box;
+  background: ${props => props.theme.colors.primary};
   display: flex;
   align-items: center;
   p {
-    color: #000000;
+    color: ${props => props.theme.colors.textColor};
     font-size: 14px;
-    @media only screen and (max-width: 768px) {
+    @media ${device.tablet} {
     margin-top: 11px;
   }
     span {
@@ -20,7 +21,7 @@ const FooterStyle = styled.footer`
   ul {
     display: flex;
     li {
-      color: #000000;
+      color: ${props => props.theme.colors.textColor};
       font-size: 14px;
       text-decoration: none;
       list-style-type: none;
@@ -40,7 +41,7 @@ const FlexBW = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media only screen and (max-width: 768px) {
+  @media ${device.tablet} {
     flex-direction: column-reverse;
     align-items: center;
   }

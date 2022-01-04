@@ -1,11 +1,10 @@
+import { StaticImage } from "gatsby-plugin-image"
 import React from 'react'
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
-import { Container } from '../../styles/Global'
 
 const NavStyle = styled.nav`
   height: 90px;
-  background: #FEF7E5 0% 0% no-repeat padding-box;
+  background: ${props => props.theme.colors.primary};
   display: flex;
   align-items: center;
   padding: 0 50px;
