@@ -5,7 +5,7 @@ export const data = [
   },
   {
     background: '#0A2540',
-    foreground: '#F5F6F8'
+    foreground: '#FFFFFF'
   },
   {
     background: '#DB4437',
@@ -36,6 +36,10 @@ export const data = [
     foreground: '#F3F4F6'
   },
   {
+    background: '#010B40',
+    foreground: '#F5F6F8'
+  },
+  {
     background: '#FDC3FF',
     foreground: '#000000'
   },
@@ -47,4 +51,39 @@ export const data = [
     background: '#FFFAD1',
     foreground: '#2B2839'
   },
+  {
+    background: '#D6EFF8',
+    foreground: '#4E4E4E'
+  },
+  {
+    background: '#130B43',
+    foreground: '#FAFAFF'
+  },
+  {
+    background: '#323439',
+    foreground: '#D6DAE1'
+  },
+  {
+    background: '#008142',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#F8F9FE',
+    foreground: '#46474E'
+  },
+  {
+    background: '#212121',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#10445B',
+    foreground: '#FFFFFF'
+  },
 ]
+
+// three colors
+// {
+//   textOne: '#96BF27',
+//   textTwo: '#DFDEE6',
+//   background: '#342A5E';
+// }
