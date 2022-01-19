@@ -30,7 +30,8 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
+  max-width: 1640px;
   margin: 0 auto;
   padding: 0 15px;
 `
@@ -50,5 +51,14 @@ export const ContrastCardsWrapper = styled.div`
   margin-bottom: 70px;
   @media ${device.tablet} {
     margin-bottom: 30px;
+  }
+`
+export const Divider = styled.div`
+  display: grid;
+  grid-template-columns: 20fr 80fr;
+  grid-column-gap: 50px;
+  @media ${device.tablet} {
+    margin-bottom: 30px;
+    display: block;
   }
 `

@@ -79,6 +79,30 @@ export const data = [
     background: '#10445B',
     foreground: '#FFFFFF'
   },
+  {
+    background: '#B9345A',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#000000',
+    foreground: '#FFCF51'
+  },
+  {
+    background: '#171A2E',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#F0FAF9',
+    foreground: '#1F7B8F'
+  },
+  {
+    background: '#F7D708',
+    foreground: '#333333'
+  },
+  {
+    background: '#E4E1CD',
+    foreground: '#333333'
+  },
 ]
 
 // three colors

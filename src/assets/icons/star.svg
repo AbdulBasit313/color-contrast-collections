@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.49" height="14.826" viewBox="0 0 15.49 14.826">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f89400"/>
+      <stop offset="0.247" stop-color="#ffb13d"/>
+      <stop offset="0.435" stop-color="#f6ad3f"/>
+      <stop offset="0.573" stop-color="#f5c57f"/>
+      <stop offset="0.703" stop-color="#f99b11"/>
+      <stop offset="0.828" stop-color="#e99922"/>
+      <stop offset="1" stop-color="#ff860d"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_awesome-star" data-name="Icon awesome-star" d="M8.355.515,6.465,4.348l-4.23.617a.927.927,0,0,0-.512,1.581l3.06,2.982L4.059,13.74a.926.926,0,0,0,1.343.976l3.784-1.989,3.784,1.989a.927.927,0,0,0,1.343-.976L13.59,9.528l3.06-2.982a.927.927,0,0,0-.512-1.581l-4.23-.617L10.017.515a.927.927,0,0,0-1.662,0Z" transform="translate(-1.441 0.001)" fill="url(#linear-gradient)"/>
+</svg>
