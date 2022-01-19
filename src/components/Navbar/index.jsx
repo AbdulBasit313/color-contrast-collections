@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <NavStyle>
       <StaticImage
-        src={"../../images/MainLogo.png"}
+        src={"../../assets/images/MainLogo.png"}
         alt="Application Logo"
       />
     </NavStyle>

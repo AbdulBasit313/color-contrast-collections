@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { device } from '../../styles/BreakPoints'
+import FilterContainer from '../FilterContainer'
 
-const CopyBtn = styled.button`
-  background: ${props => props.theme.colors.primary};
-  @media ${device.tablet} {
-  }
+const FilterWithTextStyle = styled.div`
+
 `
 
-function CopyButton({ text, bold, mt }) {
+function FilterWithText() {
   return (
-    <CopyBtn bold={bold} mt={mt}>
-      {text}
-    </CopyBtn>
+    <FilterWithTextStyle>
+      <FilterContainer title='Text'>
+        Hello
+      </FilterContainer>
+    </FilterWithTextStyle>
   )
 }
 
-export default CopyButton
+export default FilterWithText

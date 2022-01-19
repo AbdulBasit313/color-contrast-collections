@@ -2,25 +2,33 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../../styles/BreakPoints'
 import FilterContainer from './FilterContainer'
+import FilterWithColors from './FilterWithtColors'
+import FilterWithImage from './FilterWithtImage'
+import FilterWithText from './FilterWithtText'
 
 const SdiebarFiltersStyle = styled.div`
   margin-top: 40px;
-  h6 {
-    font-size: 18px;
-    font-weight: 600;
-  }
   @media ${device.tablet} {
     display: none;
   }
+  `
+
+const Title = styled.h6`
+  font-size: 18px;
+  font-weight: medium;
+  margin-left: 20px;
+  color: ${({ theme: { colors } }) => colors.darkText};
+  @media ${device.tablet} {
+}
 `
 
 function SdiebarFilters() {
   return (
     <SdiebarFiltersStyle>
-      <h6>Filters</h6>
-      <FilterContainer title='Text'>
-        Hello
-      </FilterContainer>
+      <Title>Filters</Title>
+      <FilterWithText />
+      <FilterWithColors />
+      <FilterWithImage />
     </SdiebarFiltersStyle>
   )
 }
