@@ -6,6 +6,7 @@ import { device } from '../../../../styles/BreakPoints'
 const FilterContainerStyle = styled.div`
   margin-top: 18px;
   @media ${device.tablet} {
+    margin-top: 8px;
   }
 `
 
@@ -16,6 +17,11 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   padding-left: 20px;
+  @media ${device.tablet} {
+    border-bottom: unset;
+    margin-bottom: 8px;
+    padding-bottom: unset;
+    }
   .arrow {
     cursor: pointer;
     @media ${device.tablet} {
@@ -33,6 +39,7 @@ const HeaderTitle = styled.h6`
   @media ${device.tablet} {
     font-size: 15px;
     margin-left: 12px;
+    font-weight: 400;
   }
 `
 

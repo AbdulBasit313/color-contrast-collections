@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { device } from '../../styles/BreakPoints'
 import './style.css'
 
 const AppCheckboxContainer = styled.div`
@@ -10,6 +11,10 @@ const AppCheckboxText = styled.p`
   font-size: 14px;
   color: #303030;
   margin-left: 26px;
+  /* margin-bottom: 10px; */
+  @media ${device.tablet} {
+    font-size: 12px;
+  }
 `
 
 function AppCheckbox({ text }) {
