@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Arrow from '../../../../assets/icons/arrow.svg'
 import { device } from '../../../../styles/BreakPoints'
@@ -18,8 +18,10 @@ const Header = styled.div`
   padding-left: 20px;
   .arrow {
     cursor: pointer;
-  }
-  @media ${device.tablet} {
+    @media ${device.tablet} {
+      width: 13px;
+      height: 8px;
+    }
   }
 `
 
@@ -29,6 +31,8 @@ const HeaderTitle = styled.h6`
   margin-left: 14px;
   color: ${({ theme: { colors } }) => colors.grayText};
   @media ${device.tablet} {
+    font-size: 15px;
+    margin-left: 12px;
   }
 `
 
@@ -40,15 +44,23 @@ const Children = styled.div`
 `
 
 function FilterContainer({ title, children }) {
+  const [showData, setShowData] = useState(true)
+
+  const handleToggleData = () => {
+    setShowData(!showData)
+  }
+
   return (
     <FilterContainerStyle>
-      <Header>
+      <Header onClick={handleToggleData}>
         <Arrow className="arrow" />
         <HeaderTitle>{title}</HeaderTitle>
       </Header>
-      <Children>
-        {children}
-      </Children>
+      {showData &&
+        (<Children>
+          {children}
+        </Children>
+        )}
     </FilterContainerStyle>
   )
 }

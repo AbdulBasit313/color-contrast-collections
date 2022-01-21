@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from "styled-components"
 import { device } from '../../styles/BreakPoints'
+import { StaticImage } from "gatsby-plugin-image"
+import Image from '../../assets/images/image-1.svg'
 
 const ContrastCardResultContainer = styled.div`
   background: ${props => props.background};
   border-radius: 5px;
   padding: 40px 50px;
+  display: flex;
   @media ${device.tablet} {
     padding: 22px;
+    display: block;
   }
   h2 {
     font-size: 20px;
@@ -52,16 +56,54 @@ const ContrastCardResultContainer = styled.div`
     padding: 8px 10px;
     font-size: 12px;
   }
+}
+ .card-image {
+   width: 291px;
+   height: 190px;
+   margin-left: 20px;
+   @media ${device.tablet} {
+    width: 321px;
+    height: 138px;
+    margin-top: 20px;
+    margin-left: unset;
+   }
+ }
+`
+
+const TextContainerStyle = styled.div`
+  max-width: 560px;
+`
+
+const ImageContainerStyle = styled.div`
+  margin: auto;
+  @media ${device.tablet} {
+    justify-content: center;
+    display: flex;
+    margin: unset;
   }
 `
 
 function ContrastCardResult({ foreground, background }) {
+  const textWithImage = true
+
   return (
     <ContrastCardResultContainer background={background} foreground={foreground}>
-      <h2>Contrast .02</h2>
-      <h3>There are many variations</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-      <button>Find More</button>
+      <TextContainerStyle>
+        <h2>Contrast .02</h2>
+        <h3>There are many variations</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <button>Find More</button>
+      </TextContainerStyle>
+      {textWithImage && (
+        <ImageContainerStyle>
+          <Image className="card-image" />
+          {/* <StaticImage
+            src={"../../assets/images/image-1.png"}
+            alt="Card Image"
+            className="card-image"
+          /> */}
+        </ImageContainerStyle>
+      )}
     </ContrastCardResultContainer>
   )
 }

@@ -21,6 +21,7 @@ const ColorCodeResult = styled.div`
   height: 52px;
   border-radius: 5px;
   background-color: ${props => props.code};
+  border: 2px solid #FEF7E5;
   @media ${device.tablet} {
     width: 35px;
     height: 35px;
