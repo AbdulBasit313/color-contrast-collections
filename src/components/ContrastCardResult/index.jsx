@@ -96,12 +96,12 @@ function ContrastCardResult({ foreground, background }) {
       </TextContainerStyle>
       {textWithImage && (
         <ImageContainerStyle>
-          <Image className="card-image" />
-          {/* <StaticImage
+          {/* <Image className="card-image" /> */}
+          <StaticImage
             src={"../../assets/images/image-1.png"}
             alt="Card Image"
             className="card-image"
-          /> */}
+          />
         </ImageContainerStyle>
       )}
     </ContrastCardResultContainer>
