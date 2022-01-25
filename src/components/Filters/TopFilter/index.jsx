@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import Star from '../../../assets/icons/star.svg'
 import { topFilter } from '../../../config/filterr'
+import { ColorContext } from '../../../context/colors/colorContext'
 import { device } from '../../../styles/BreakPoints'
 
 const TopFilterStyle = styled.div`
@@ -57,10 +58,29 @@ const TopFilterStyle = styled.div`
 
 function TopFilter() {
   const [activeFilter, setActiveFilter] = useState(1)
+  const { onRemoveImage, onShowImage } = useContext(ColorContext)
 
-  const onChangeFilter = (id) => {
+  const textOnlyFilter = (id) => {
     setActiveFilter(id)
+    onRemoveImage()
   }
+
+  const textWithImageFilter = (id) => {
+    setActiveFilter(id)
+    onShowImage()
+  }
+
+  // const onChangeFilter = (id) => {
+  //   setActiveFilter((prevState) => {
+  //     console.log('id  ==>', prevState)
+  //     if (activeFilter === 3) {
+  //       onRemoveImage()
+  //     }
+  //     if (activeFilter === 4) {
+  //       onShowImage()
+  //     }
+  //   }, id)
+  // }
 
   return (
     <TopFilterStyle>
@@ -68,7 +88,8 @@ function TopFilter() {
         {topFilter.map(({ id, name }) => (
           <li
             className={id === activeFilter ? 'box selected' : 'box'}
-            onClick={() => onChangeFilter(id)}
+            // onClick={() => onChangeFilter(id)}
+            onClick={() => id === 3 ? textOnlyFilter(id) : textWithImageFilter(id)}
           >
             {id === 1 && <Star className="star-icon" />}
             <span className='filter-text'>{name}</span>

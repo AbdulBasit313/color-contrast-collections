@@ -1,15 +1,15 @@
 import * as React from "react"
 import { ThemeProvider } from "styled-components"
 import AppTitle from "../components/AppTitle"
-import ContrastCard from "../components/ContrastCard"
+import ContrastCardList from "../components/ContrastCardList"
 import SdiebarFilters from "../components/Filters/SidebarFilters"
 import SmallScreenFilter from "../components/Filters/SmallScreenFilter"
 import TopFilter from "../components/Filters/TopFilter"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
-import { data } from "../data"
+import ColorState from "../context/colors/ColorState"
 import useWindowSize from "../hooks/useWindowSize"
-import { Container, ContrastCardsWrapper, Divider, GlobalStyles } from "../styles/Global"
+import { Container, Divider, GlobalStyles } from "../styles/Global"
 import { theme } from "../styles/Theme"
 
 const IndexPage = () => {
@@ -17,24 +17,22 @@ const IndexPage = () => {
 
   return (
     <main>
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <Container>
-          <GlobalStyles />
-          <AppTitle />
-          {width <= 768 && <SmallScreenFilter />}
-          <TopFilter />
-          <Divider>
-            {width > 768 && <SdiebarFilters />}
-            <ContrastCardsWrapper>
-              {data.map(({ background, foreground }) => (
-                <ContrastCard foreground={foreground} background={background} />
-              ))}
-            </ContrastCardsWrapper>
-          </Divider>
-        </Container>
-        <Footer />
-      </ThemeProvider>
+      <ColorState>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <Container>
+            <GlobalStyles />
+            <AppTitle />
+            {width <= 768 && <SmallScreenFilter />}
+            <TopFilter />
+            <Divider>
+              {width > 768 && <SdiebarFilters />}
+              <ContrastCardList />
+            </Divider>
+          </Container>
+          <Footer />
+        </ThemeProvider>
+      </ColorState>
     </main>
   )
 }

@@ -24,10 +24,14 @@ const Header = styled.div`
     }
   .arrow {
     cursor: pointer;
+    transition: all 0.2s ease-in;
     @media ${device.tablet} {
       width: 13px;
       height: 8px;
     }
+  }
+  .move {
+    transform: rotate(-90deg);
   }
 `
 
@@ -60,7 +64,7 @@ function FilterContainer({ title, children }) {
   return (
     <FilterContainerStyle>
       <Header onClick={handleToggleData}>
-        <Arrow className="arrow" />
+        <Arrow className={`arrow ${!showData && 'move'}`} />
         <HeaderTitle>{title}</HeaderTitle>
       </Header>
       {showData &&

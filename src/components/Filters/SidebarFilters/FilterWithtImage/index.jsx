@@ -1,5 +1,7 @@
 import React from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { ColorContext } from '../../../../context/colors/colorContext'
 import AppCheckbox from '../../../AppCheckbox'
 import FilterContainer from '../FilterContainer'
 
@@ -12,11 +14,13 @@ const FilterWithImageStyle = styled.div`
 `
 
 function FilterWithImage() {
+  const { onClickImageOnRight, onClickImageOnLeft } = useContext(ColorContext)
+
   return (
     <FilterWithImageStyle>
       <FilterContainer title='Image'>
-        <AppCheckbox text="Image on Left" />
-        <AppCheckbox text="Image on Right" />
+        <AppCheckbox text="Image on Left" handleChange={onClickImageOnLeft} />
+        <AppCheckbox text="Image on Right" handleChange={onClickImageOnRight} />
       </FilterContainer>
     </FilterWithImageStyle>
   )

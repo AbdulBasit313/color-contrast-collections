@@ -1,14 +1,15 @@
-import React from 'react'
-import styled from "styled-components"
-import { device } from '../../styles/BreakPoints'
 import { StaticImage } from "gatsby-plugin-image"
-import Image from '../../assets/images/image-1.svg'
+import React, { useContext } from 'react'
+import styled from "styled-components"
+import { ColorContext } from '../../context/colors/colorContext'
+import { device } from '../../styles/BreakPoints'
 
 const ContrastCardResultContainer = styled.div`
   background: ${props => props.background};
   border-radius: 5px;
   padding: 40px 50px;
   display: flex;
+  flex-direction: ${({ imageOnLeft }) => imageOnLeft ? 'row-reverse' : null};
   @media ${device.tablet} {
     padding: 22px;
     display: block;
@@ -61,9 +62,18 @@ const ContrastCardResultContainer = styled.div`
    width: 291px;
    height: 190px;
    margin-left: 20px;
+   margin-left: ${({ imageOnLeft }) => imageOnLeft ? 'unset' : '20px'};
+   margin-right: ${({ imageOnLeft }) => imageOnLeft ? '30px' : 'unset'};
    @media ${device.tablet} {
-    width: 321px;
-    height: 138px;
+    /* width: 321px; */
+    /* width: 100%; */
+    /* height: 138px; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* object-fit: contain; */
+    width:unset;
+    height: unset;
+    /* height: 80%; */
     margin-top: 20px;
     margin-left: unset;
    }
@@ -84,18 +94,21 @@ const ImageContainerStyle = styled.div`
 `
 
 function ContrastCardResult({ foreground, background }) {
-  const textWithImage = true
+  const { showImage, filters } = useContext(ColorContext)
 
   return (
-    <ContrastCardResultContainer background={background} foreground={foreground}>
+    <ContrastCardResultContainer
+      background={background}
+      foreground={foreground}
+      imageOnLeft={filters.imageOnLeft}>
       <TextContainerStyle>
         <h2>Contrast .02</h2>
         <h3>There are many variations</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         <button>Find More</button>
       </TextContainerStyle>
-      {textWithImage && (
-        <ImageContainerStyle>
+      {showImage && (
+        <ImageContainerStyle imageOnLeft={filters.imageOnLeft}>
           {/* <Image className="card-image" /> */}
           <StaticImage
             src={"../../assets/images/image-1.png"}

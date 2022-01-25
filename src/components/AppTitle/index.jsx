@@ -1,5 +1,7 @@
 import React from 'react'
+import { useContext } from 'react'
 import styled from "styled-components"
+import { ColorContext } from '../../context/colors/colorContext'
 import { data } from '../../data'
 import { device } from '../../styles/BreakPoints'
 
@@ -35,11 +37,13 @@ const Subtitle = styled.div`
 `
 
 function AppTitle() {
+  const { colorsData } = useContext(ColorContext)
+
   return (
     <TitleStyle>
       <Title>Welcome to Contrast Picker</Title>
       <Subtitle>
-        <p>{data.length} curated text with background colors contrast</p>
+        <p>{colorsData.length} curated text with background colors contrast</p>
         <p>We help you to pick best contrasts for your websites, landing pages, blogs etc.</p>
       </Subtitle>
     </TitleStyle>

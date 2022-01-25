@@ -17,12 +17,12 @@ const AppCheckboxText = styled.p`
   }
 `
 
-function AppCheckbox({ text }) {
+function AppCheckbox({ text, handleChange }) {
   const [checked, setChecked] = useState(false)
 
-  const handleChange = () => {
-    setChecked(!checked)
-  }
+  // const handleChange = () => {
+  //   setChecked(!checked)
+  // }
 
   return (
     <AppCheckboxContainer>

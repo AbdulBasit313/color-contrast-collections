@@ -32,6 +32,7 @@ const FilterStyle = styled.div`
   /* width: 90%; */
   left: 4%;
   right: 4%;
+  z-index: 1;
   /* top: 0;  */
   /* right: 50%; */
   /* transform: translate(50%,-50%); */

@@ -47,12 +47,7 @@ export const mt24 = styled.div`
     margin-top: 13px;
   }
 `
-export const ContrastCardsWrapper = styled.div`
-  margin-bottom: 70px;
-  @media ${device.tablet} {
-    margin-bottom: 30px;
-  }
-`
+
 export const Divider = styled.div`
   display: grid;
   grid-template-columns: 20fr 80fr;

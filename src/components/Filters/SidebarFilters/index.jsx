@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { filterWithColor } from '../../../config/filterr'
+import { ColorContext } from '../../../context/colors/colorContext'
 import { device } from '../../../styles/BreakPoints'
 import FilterWithColors from './FilterWithtColors'
 import FilterWithImage from './FilterWithtImage'
@@ -49,13 +50,19 @@ const ApplyBtn = styled.button`
 `
 
 function SdiebarFilters() {
+  const { onClickImageOnLeft } = useContext(ColorContext)
+
+  const applyFilter = () => {
+    onClickImageOnLeft()
+  }
+
   return (
     <SdiebarFiltersStyle>
       <Title>Filters</Title>
       <FilterWithText />
       <FilterWithColors colors={filterWithColor} />
       <FilterWithImage />
-      <ApplyBtn>Apply</ApplyBtn>
+      <ApplyBtn onClick={applyFilter}>Apply</ApplyBtn>
     </SdiebarFiltersStyle>
   )
 }
