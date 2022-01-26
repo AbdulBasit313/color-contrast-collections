@@ -41,6 +41,7 @@ const ApplyBtn = styled.button`
   display: flex;
   margin: auto;
   margin-top: 30px;
+  cursor: pointer;
   @media ${device.tablet} {
     width: 80%;
     display: block;
@@ -50,11 +51,13 @@ const ApplyBtn = styled.button`
 `
 
 function SdiebarFilters() {
-  const { onClickImageOnLeft } = useContext(ColorContext)
+  const { applyFilters, filters } = useContext(ColorContext)
 
-  const applyFilter = () => {
-    onClickImageOnLeft()
+  const applyAllFilter = () => {
+    applyFilters()
   }
+
+  console.log('filters ==>', filters)
 
   return (
     <SdiebarFiltersStyle>
@@ -62,7 +65,7 @@ function SdiebarFilters() {
       <FilterWithText />
       <FilterWithColors colors={filterWithColor} />
       <FilterWithImage />
-      <ApplyBtn onClick={applyFilter}>Apply</ApplyBtn>
+      <ApplyBtn onClick={applyAllFilter}>Apply</ApplyBtn>
     </SdiebarFiltersStyle>
   )
 }

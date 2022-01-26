@@ -19,8 +19,14 @@ function FilterWithImage() {
   return (
     <FilterWithImageStyle>
       <FilterContainer title='Image'>
-        <AppCheckbox text="Image on Left" handleChange={onClickImageOnLeft} />
-        <AppCheckbox text="Image on Right" handleChange={onClickImageOnRight} />
+        <AppCheckbox
+          text="Image on Left"
+          handleChange={onClickImageOnLeft}
+        />
+        <AppCheckbox
+          text="Image on Right"
+          handleChange={onClickImageOnRight}
+        />
       </FilterContainer>
     </FilterWithImageStyle>
   )

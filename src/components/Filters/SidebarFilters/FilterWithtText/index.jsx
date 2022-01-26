@@ -27,6 +27,9 @@ function FilterWithText() {
           text="Light Text"
           handleChange={onClickLightText}
         />
+        <AppCheckbox
+          text="All"
+        />
       </FilterContainer>
     </FilterWithTextStyle>
   )

@@ -57,16 +57,17 @@ const TopFilterStyle = styled.div`
 `
 
 function TopFilter() {
-  const [activeFilter, setActiveFilter] = useState(1)
-  const { onRemoveImage, onShowImage } = useContext(ColorContext)
+  const {
+    activeTopFilter, setActiveTopFilter, onRemoveImage, onShowImage
+  } = useContext(ColorContext)
 
   const textOnlyFilter = (id) => {
-    setActiveFilter(id)
+    setActiveTopFilter(id)
     onRemoveImage()
   }
 
   const textWithImageFilter = (id) => {
-    setActiveFilter(id)
+    setActiveTopFilter(id)
     onShowImage()
   }
 
@@ -87,7 +88,7 @@ function TopFilter() {
       <ul>
         {topFilter.map(({ id, name }) => (
           <li
-            className={id === activeFilter ? 'box selected' : 'box'}
+            className={id === activeTopFilter ? 'box selected' : 'box'}
             // onClick={() => onChangeFilter(id)}
             onClick={() => id === 3 ? textOnlyFilter(id) : textWithImageFilter(id)}
           >

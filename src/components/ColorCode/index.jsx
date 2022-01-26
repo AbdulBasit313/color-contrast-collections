@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { checkLuminance } from '../../config/checkLuminance'
 import { device } from '../../styles/BreakPoints'
 
 const Code = styled.div`
@@ -22,6 +23,7 @@ const ColorCodeResult = styled.div`
   border-radius: 5px;
   background-color: ${props => props.code};
   border: 2px solid #FEF7E5;
+  border: ${props => checkLuminance(props.code) === false ? '2px solid #FEF7E5' : null};
   @media ${device.tablet} {
     width: 35px;
     height: 35px;
