@@ -14,7 +14,7 @@ const FilterWithTextStyle = styled.div`
 `
 
 function FilterWithText() {
-  const { onClickDarkText, onClickLightText } = useContext(ColorContext)
+  const { onClickDarkText, onClickLightText, onClickAll } = useContext(ColorContext)
 
   return (
     <FilterWithTextStyle>
@@ -29,6 +29,7 @@ function FilterWithText() {
         />
         <AppCheckbox
           text="All"
+          handleChange={onClickAll}
         />
       </FilterContainer>
     </FilterWithTextStyle>

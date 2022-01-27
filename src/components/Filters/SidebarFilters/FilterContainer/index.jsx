@@ -24,7 +24,7 @@ const Header = styled.div`
     }
   .arrow {
     cursor: pointer;
-    transition: all 0.2s ease-in;
+    transition: all 0.1s linear;
     @media ${device.tablet} {
       width: 13px;
       height: 8px;

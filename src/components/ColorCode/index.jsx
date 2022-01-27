@@ -22,7 +22,6 @@ const ColorCodeResult = styled.div`
   height: 52px;
   border-radius: 5px;
   background-color: ${props => props.code};
-  border: 2px solid #FEF7E5;
   border: ${props => checkLuminance(props.code) === false ? '2px solid #FEF7E5' : null};
   @media ${device.tablet} {
     width: 35px;

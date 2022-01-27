@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { ColorContext } from '../../../../context/colors/colorContext'
 import FilterContainer from '../FilterContainer'
 
 const FilterWithColorsStyle = styled.div`
@@ -19,15 +21,28 @@ const ColorStyle = styled.div`
   border-radius: 4px;
   background-color: ${props => props.value};
   cursor: pointer;
+  border: ${({ selected }) => selected ? '1px solid #FEF7E5' : null};
 `
 
 function FilterWithColors({ colors }) {
+  const { nearestColors } = useContext(ColorContext)
+  const [activeColor, setActiveColor] = useState(null)
+
+  const onChangeColor = (id, color) => {
+    setActiveColor(id)
+    nearestColors(color)
+  }
+
   return (
     <FilterWithColorsStyle>
       <FilterContainer title='Color'>
         <ColorContainer>
-          {colors.map(({ color }) => (
-            <ColorStyle value={color} />
+          {colors.map(({ color, id }) => (
+            <ColorStyle
+              selected={id === activeColor ? true : false}
+              value={color}
+              onClick={() => onChangeColor(id, color)}
+            />
           ))
           }
         </ColorContainer>

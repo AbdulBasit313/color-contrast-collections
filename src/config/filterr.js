@@ -37,40 +37,52 @@ const filterWihtImage = [
 
 const filterWithColor = [
   {
-    color: '#F8FF01'
+    color: '#F8FF01',
+    id: 1,
   },
   {
-    color: '#74FD11'
+    color: '#74FD11',
+    id: 2,
   },
   {
-    color: '#00BB02'
+    color: '#00BB02',
+    id: 3,
   },
   {
-    color: '#06BE8C'
+    color: '#06BE8C',
+    id: 4,
   },
   {
-    color: '#1361B4'
+    color: '#1361B4',
+    id: 5,
   },
   {
-    color: '#AB33F6'
+    color: '#AB33F6',
+    id: 6,
   },
   {
-    color: '#7226AA'
+    color: '#7226AA',
+    id: 7,
   },
   {
-    color: '#C527BC'
+    color: '#C527BC',
+    id: 8,
   },
   {
-    color: '#F62609'
+    color: '#F62609',
+    id: 9,
   },
   {
-    color: '#DC3029'
+    color: '#DC3029',
+    id: 10,
   },
   {
-    color: '#F58613'
+    color: '#F58613',
+    id: 11,
   },
   {
-    color: '#F6C21E'
+    color: '#F6C21E',
+    id: 12,
   },
 ]
 

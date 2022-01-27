@@ -51,10 +51,10 @@ const ApplyBtn = styled.button`
 `
 
 function SdiebarFilters() {
-  const { applyFilters, filters } = useContext(ColorContext)
+  const { applyFilters, filters, nearestColors } = useContext(ColorContext)
 
   const applyAllFilter = () => {
-    applyFilters()
+    nearestColors('#4A154B')
   }
 
   console.log('filters ==>', filters)
