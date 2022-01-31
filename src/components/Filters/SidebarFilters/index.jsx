@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { filterWithColor } from '../../../config/filterr'
 import { ColorContext } from '../../../context/colors/colorContext'
+import useWindowSize from '../../../hooks/useWindowSize'
 import { device } from '../../../styles/BreakPoints'
 import FilterWithColors from './FilterWithtColors'
 import FilterWithImage from './FilterWithtImage'
@@ -42,19 +43,28 @@ const ApplyBtn = styled.button`
   margin: auto;
   margin-top: 30px;
   cursor: pointer;
+  &:disabled {
+    background-color: ${({ theme: { colors } }) => colors.grayText};
+    cursor: not-allowed;
+  }
   @media ${device.tablet} {
-    width: 80%;
+    width: 350px;
+    max-width: 80%;
     display: block;
     font-size: 15px;
     text-align: center;
 }
 `
 
-function SdiebarFilters() {
-  const { applyFilters, filters } = useContext(ColorContext)
+function SdiebarFilters({ closeSmallScreenFilter }) {
+  const { applyFilters, filters, emptyFilter } = useContext(ColorContext)
+  const [width] = useWindowSize()
 
   const applyAllFilter = () => {
     applyFilters()
+    if (width <= 768) {
+      closeSmallScreenFilter(false)
+    }
   }
 
   console.log('filters ==>', filters)
@@ -65,7 +75,7 @@ function SdiebarFilters() {
       <FilterWithText />
       <FilterWithColors colors={filterWithColor} />
       <FilterWithImage />
-      <ApplyBtn onClick={applyAllFilter}>Apply</ApplyBtn>
+      <ApplyBtn onClick={applyAllFilter} disabled={emptyFilter}>Apply</ApplyBtn>
     </SdiebarFiltersStyle>
   )
 }

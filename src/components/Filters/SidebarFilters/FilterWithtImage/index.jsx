@@ -1,8 +1,7 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { ColorContext } from '../../../../context/colors/colorContext'
-import AppCheckbox from '../../../AppCheckbox'
+import RadionButton from '../../../RadioButton'
 import FilterContainer from '../FilterContainer'
 
 const FilterWithImageStyle = styled.div`
@@ -14,18 +13,26 @@ const FilterWithImageStyle = styled.div`
 `
 
 function FilterWithImage() {
-  const { onClickImageOnRight, onClickImageOnLeft } = useContext(ColorContext)
+  const { imagePostion, onClickImageOnRight, onClickImageOnLeft } = useContext(ColorContext)
 
   return (
     <FilterWithImageStyle>
       <FilterContainer title='Image'>
-        <AppCheckbox
-          text="Image on Left"
-          handleChange={onClickImageOnLeft}
+        <RadionButton
+          name="image-on-left"
+          id="image-on-left"
+          value='Image on Left'
+          text='Image on Left'
+          onChange={onClickImageOnLeft}
+          checked={imagePostion.imageOnLeft}
         />
-        <AppCheckbox
-          text="Image on Right"
-          handleChange={onClickImageOnRight}
+        <RadionButton
+          name="image-on-right"
+          id="image-on-right"
+          value='Image on Right'
+          text='Image on Right'
+          onChange={onClickImageOnRight}
+          checked={imagePostion.imageOnRight}
         />
       </FilterContainer>
     </FilterWithImageStyle>

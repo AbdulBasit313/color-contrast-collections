@@ -51,6 +51,9 @@ const Children = styled.div`
   background: #FFFBEF 0% 0% no-repeat padding-box;
   padding: 18px;
   @media ${device.tablet} {
+    .children-data {
+      max-width: 400px;
+    }
   }
 `
 
@@ -69,10 +72,13 @@ function FilterContainer({ title, children }) {
       </Header>
       {showData &&
         (<Children>
-          {children}
+          <div className='children-data'>
+            {children}
+          </div>
         </Children>
-        )}
-    </FilterContainerStyle>
+        )
+      }
+    </FilterContainerStyle >
   )
 }
 

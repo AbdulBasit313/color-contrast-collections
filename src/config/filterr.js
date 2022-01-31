@@ -37,7 +37,7 @@ const filterWihtImage = [
 
 const filterWithColor = [
   {
-    color: '#F8FF01',
+    color: '#F6C21E',
     id: 1,
   },
   {
@@ -69,7 +69,7 @@ const filterWithColor = [
     id: 8,
   },
   {
-    color: '#F62609',
+    color: '#aaaaaa',
     id: 9,
   },
   {
@@ -81,7 +81,7 @@ const filterWithColor = [
     id: 11,
   },
   {
-    color: '#F6C21E',
+    color: '#000000',
     id: 12,
   },
 ]

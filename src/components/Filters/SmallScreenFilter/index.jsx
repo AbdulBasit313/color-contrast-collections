@@ -47,7 +47,7 @@ function SmallScreenFilter() {
 
   return (
     <>
-      <SmallScreenFilterStyle >
+      <SmallScreenFilterStyle>
         <FilterContainer onClick={handleFilteShow}>
           <FilterIcon />
           <span>Filter</span>
@@ -55,7 +55,7 @@ function SmallScreenFilter() {
       </SmallScreenFilterStyle>
       <FilterStyle>
         {showFilter && (
-          <SdiebarFilters />
+          <SdiebarFilters closeSmallScreenFilter={setShowFilter} />
         )}
       </FilterStyle>
     </>

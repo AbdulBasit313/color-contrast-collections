@@ -25,12 +25,12 @@ const ColorStyle = styled.div`
 `
 
 function FilterWithColors({ colors }) {
-  const { nearestColors } = useContext(ColorContext)
+  const { selectFilterColor } = useContext(ColorContext)
   const [activeColor, setActiveColor] = useState(null)
 
   const onChangeColor = (id, color) => {
     setActiveColor(id)
-    nearestColors(color)
+    selectFilterColor(color)
   }
 
   return (

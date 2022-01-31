@@ -14,11 +14,13 @@ const ContrastCardsWrapper = styled.div`
 function ContrastCardList() {
   const { colorsData } = useContext(ColorContext)
 
+  console.log('colorsData', colorsData)
   return (
     <ContrastCardsWrapper>
-      {colorsData.map(({ background, foreground }) => (
+      {colorsData?.map(({ background, foreground }) => (
         <ContrastCard foreground={foreground} background={background} />
       ))}
+      {!colorsData.length && <h1>Sorry we didn't find any match</h1>}
     </ContrastCardsWrapper>
   )
 }
