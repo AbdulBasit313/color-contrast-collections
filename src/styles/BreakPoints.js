@@ -3,10 +3,12 @@ const size = {
   mobileM: '375px',
   mobileL: '425px',
   tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
+  laptop: '1024px', // ipad landscape -- next
+  laptopL: '1440px', // important
   desktop: '2560px'
 }
+
+// my laptop view port 1280px
 
 export const device = {
   mobileS: `(max-width: ${size.mobileS})`,

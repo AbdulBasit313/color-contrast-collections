@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components"
 import { device } from '../../styles/BreakPoints'
 import { AppBorder } from '../../styles/Global'
@@ -23,12 +23,26 @@ const ColorCodeWrapper = styled(AppBorder)`
 `
 
 function ColorCodeContainer({ title, code }) {
+  const [isCopied, setIsCopied] = useState(false)
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => {
+        setIsCopied(false)
+      }, 1500)
+    }
+  }, [isCopied])
+
+  const handleCopyCode = () => {
+    setIsCopied(true)
+  }
+
   return (
     <section>
       <ColorCodeTitle>{title}</ColorCodeTitle>
       <ColorCodeWrapper>
-        <CopyButton text="Copy Color" />
-        <ColorCode code={code} />
+        <CopyButton text="Copy Color" code={code} handleCopyCode={handleCopyCode} />
+        <ColorCode code={code} isCopied={isCopied} />
       </ColorCodeWrapper>
     </section>
   )

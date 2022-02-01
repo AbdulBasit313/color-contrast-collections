@@ -11,7 +11,8 @@ const FilterContainerStyle = styled.div`
 `
 
 const Header = styled.div`
-  border-bottom: 1px solid #9A9A9A;
+  /* border-bottom: 1px solid #9A9A9A; */
+  border-bottom: 1px solid #E0E0E0;
   padding-bottom: 10px;
   margin-bottom: 10px;
   display: flex;

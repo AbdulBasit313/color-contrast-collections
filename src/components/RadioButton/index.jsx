@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import { device } from '../../styles/BreakPoints'
 
 const RadioLabelStyle = styled.label`
+  cursor: pointer;
 `
 
 const RadioButtonStyle = styled.input`
+  cursor: pointer;
 `
 
 const RadioText = styled.span`

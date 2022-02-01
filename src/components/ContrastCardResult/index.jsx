@@ -49,12 +49,12 @@ const ContrastCardResultContainer = styled.div`
     border: 1px solid ${props => props.foreground};
     color: ${props => props.foreground};
     background-color: transparent;
-    padding: 10px 14px;
+    padding: 8px 14px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 20px;
     @media ${device.tablet} {
-    border-radius: 2px;
-    padding: 8px 10px;
+    /* border-radius: 2px; */
+    padding: 5px 8px;
     font-size: 12px;
   }
 }

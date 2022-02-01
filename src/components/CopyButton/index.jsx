@@ -1,4 +1,5 @@
 import React from 'react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import styled from 'styled-components'
 import { device } from '../../styles/BreakPoints'
 
@@ -22,11 +23,13 @@ const CopyBtn = styled.button`
   }
 `
 
-function CopyButton({ text, bold, mt }) {
+function CopyButton({ text, bold, mt, handleShowCode, code, handleCopyCode }) {
   return (
-    <CopyBtn bold={bold} mt={mt}>
-      {text}
-    </CopyBtn>
+    <CopyToClipboard text={code} onCopy={handleCopyCode}>
+      <CopyBtn bold={bold} mt={mt} onClick={handleShowCode}>
+        {text}
+      </CopyBtn>
+    </CopyToClipboard>
   )
 }
 
