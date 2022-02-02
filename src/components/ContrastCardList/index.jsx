@@ -10,6 +10,13 @@ const ContrastCardsWrapper = styled.div`
     margin-bottom: 30px;
   }
 `
+const NoRecord = styled.h2`
+  margin-top: 40px;
+  text-align: center;
+  @media ${device.tablet} {
+    font-size: 14px;
+  }
+`
 
 function ContrastCardList() {
   const { colorsData } = useContext(ColorContext)
@@ -20,7 +27,7 @@ function ContrastCardList() {
       {colorsData?.map(({ background, foreground }) => (
         <ContrastCard foreground={foreground} background={background} />
       ))}
-      {!colorsData.length && <h1>Sorry we didn't find any match</h1>}
+      {!colorsData.length && <NoRecord>Sorry we didn't find any match</NoRecord>}
     </ContrastCardsWrapper>
   )
 }

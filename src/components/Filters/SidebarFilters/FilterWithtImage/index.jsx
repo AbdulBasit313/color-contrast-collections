@@ -7,13 +7,15 @@ import FilterContainer from '../FilterContainer'
 const FilterWithImageStyle = styled.div`
   div:nth-child(2) {
     div:not(:first-child) {
-      margin-top: 15px;
+      margin-top: 6px;
   } 
 } 
 `
 
 function FilterWithImage() {
-  const { imagePostion, onClickImageOnRight, onClickImageOnLeft } = useContext(ColorContext)
+  const {
+    imagePostion, onClickImageOnRight, onClickImageOnLeft, onClickNoImage,
+  } = useContext(ColorContext)
 
   return (
     <FilterWithImageStyle>
@@ -33,6 +35,14 @@ function FilterWithImage() {
           text='Image on Right'
           onChange={onClickImageOnRight}
           checked={imagePostion.imageOnRight}
+        />
+        <RadionButton
+          name="no-image"
+          id="no-image"
+          value='No Image'
+          text='No Image'
+          onChange={onClickNoImage}
+          checked={imagePostion.noImageSelected}
         />
       </FilterContainer>
     </FilterWithImageStyle>

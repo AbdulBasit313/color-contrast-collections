@@ -36,7 +36,7 @@ const ContrastCardSpecs = ({ foreground, background }) => {
         <ColorCodeContainer title="Foreground Color" code={foreground} />
         <CopyButton
           handleShowCode={handleShowCode}
-          text="Copy Code"
+          text="Show Code"
           bold
           mt={width <= 768 ? '13px' : '24px'}
         />

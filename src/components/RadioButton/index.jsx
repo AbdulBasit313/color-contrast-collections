@@ -4,10 +4,14 @@ import { device } from '../../styles/BreakPoints'
 
 const RadioLabelStyle = styled.label`
   cursor: pointer;
+  /* vertical-align: text-top; */
 `
 
 const RadioButtonStyle = styled.input`
   cursor: pointer;
+  @media ${device.tablet} {
+    vertical-align: baseline;
+  }
 `
 
 const RadioText = styled.span`
@@ -15,6 +19,7 @@ const RadioText = styled.span`
   font-size: 14px;
   margin-left: 7px;
   @media ${device.tablet} {
+    line-height: 18px;
     font-size: 12px;
     margin-left: 5px;
   }

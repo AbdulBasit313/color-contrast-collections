@@ -7,7 +7,7 @@ import FilterContainer from '../FilterContainer'
 const FilterWithTextStyle = styled.div`
   div:nth-child(2) {
     div:not(:first-child) {
-      margin-top: 15px;
+      margin-top: 6px;
   } 
   } 
 `

@@ -7,6 +7,8 @@ import { device } from '../../../styles/BreakPoints'
 import FilterWithColors from './FilterWithtColors'
 import FilterWithImage from './FilterWithtImage'
 import FilterWithText from './FilterWithtText'
+import RefreshIcon from '../../../assets/icons/refresh-icon.svg'
+import { useState } from 'react'
 
 const SdiebarFiltersStyle = styled.div`
   margin-top: 40px;
@@ -31,6 +33,13 @@ const Title = styled.h6`
 }
 `
 
+const FilterActionsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+`
+
 const ApplyBtn = styled.button`
   background: #F4B400 0% 0% no-repeat padding-box;
   border-radius: 6px;
@@ -39,25 +48,38 @@ const ApplyBtn = styled.button`
   border: none;
   color: #FFFFFF;
   font-size: 18px;
-  display: flex;
-  margin: auto;
-  margin-top: 30px;
+  width: 180px;
+  max-width: 70%;
   cursor: pointer;
   &:disabled {
     background-color: ${({ theme: { colors } }) => colors.grayText};
     cursor: not-allowed;
   }
   @media ${device.tablet} {
-    width: 350px;
-    max-width: 80%;
+    width: 330px;
+    max-width: 70%;
     display: block;
     font-size: 15px;
     text-align: center;
-}
+  }
+  `
+
+const ResetBtn = styled.button`
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  background-color: ${({ theme: { colors } }) => colors.black};
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  @media ${device.tablet} {
+    padding: 6px 10px;
+  }
 `
 
 function SdiebarFilters({ closeSmallScreenFilter }) {
-  const { applyFilters, filters, emptyFilter } = useContext(ColorContext)
+  const [activeColor, setActiveColor] = useState(null)
+  const { applyFilters, filters, emptyFilter, resetFilters } = useContext(ColorContext)
   const [width] = useWindowSize()
 
   const applyAllFilter = () => {
@@ -67,15 +89,29 @@ function SdiebarFilters({ closeSmallScreenFilter }) {
     }
   }
 
+  const resetAllFilters = () => {
+    resetFilters()
+    setActiveColor(null)
+  }
+
   console.log('filters ==>', filters)
 
   return (
     <SdiebarFiltersStyle>
       <Title>Filters</Title>
       <FilterWithText />
-      <FilterWithColors colors={filterWithColor} />
-      <FilterWithImage />
-      <ApplyBtn onClick={applyAllFilter} disabled={emptyFilter}>Apply</ApplyBtn>
+      <FilterWithColors
+        colors={filterWithColor}
+        activeColor={activeColor}
+        setActiveColor={setActiveColor}
+      />
+      {width > 768 && <FilterWithImage />}
+      <FilterActionsContainer>
+        <ResetBtn onClick={resetAllFilters}>
+          <RefreshIcon />
+        </ResetBtn>
+        <ApplyBtn onClick={applyAllFilter} disabled={emptyFilter}>Apply</ApplyBtn>
+      </FilterActionsContainer>
     </SdiebarFiltersStyle>
   )
 }

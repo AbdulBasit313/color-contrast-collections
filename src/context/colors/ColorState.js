@@ -19,6 +19,7 @@ const ColorState = ({ children }) => {
   const [imagePostion, setImagePostion] = useState({
     imageOnRight: false,
     imageOnLeft: false,
+    noImageSelected: false,
   })
 
   const [selectedColor, setSelectedColor] = useState(null)
@@ -31,6 +32,29 @@ const ColorState = ({ children }) => {
     imageOnRight: false,
     imageOnLeft: false,
   })
+
+  const resetFilters = () => {
+    console.log('reset')
+    setFilters({
+      darkText: false,
+      lightText: false,
+      allTextSelected: false,
+      selectedColor: null,
+      imageOnRight: false,
+      imageOnLeft: false,
+    })
+    setSelectedColor(null)
+    setTextColor({
+      darkText: false,
+      lightText: false,
+      allTextSelected: false,
+    })
+    setImagePostion({
+      imageOnRight: false,
+      imageOnLeft: false,
+      noImageSelected: false,
+    })
+  }
 
   const nearestColors = (color) => {
     const staticColor = hexToRgb(color)
@@ -88,6 +112,10 @@ const ColorState = ({ children }) => {
     if (!imagePostion.imageOnLeft || !imagePostion.imageOnRight) {
       setActiveTopFilter(3)
     }
+    if (imagePostion.noImageSelected) {
+      setActiveTopFilter(3)
+      setShowImage(false)
+    }
   }
 
   const filterWithTextColors = (condition) => {
@@ -104,6 +132,7 @@ const ColorState = ({ children }) => {
     setImagePostion({
       imageOnRight: true,
       imageOnLeft: false,
+      noImageSelected: false,
     })
     setEmptyFilter(false)
   }
@@ -112,6 +141,15 @@ const ColorState = ({ children }) => {
     setImagePostion({
       imageOnRight: false,
       imageOnLeft: true,
+      noImageSelected: false,
+    })
+    setEmptyFilter(false)
+  }
+  const onClickNoImage = () => {
+    setImagePostion({
+      imageOnRight: false,
+      imageOnLeft: false,
+      noImageSelected: true,
     })
     setEmptyFilter(false)
   }
@@ -124,6 +162,8 @@ const ColorState = ({ children }) => {
     })
     setEmptyFilter(false)
   }
+
+  console.log('agin running', textColor)
 
   const onClickLightText = () => {
     setTextColor({
@@ -153,7 +193,7 @@ const ColorState = ({ children }) => {
 
   const onRemoveImage = () => {
     setShowImage(false)
-    setFilters({ ...filters, imageOnLeft: false, imageOnRight: false })
+    setFilters({ ...filters, imageOnLeft: false, imageOnRight: false, noImageSelected: false })
   }
 
   const onShowImage = () => {
@@ -181,6 +221,8 @@ const ColorState = ({ children }) => {
         onClickLightText,
         onClickAll,
         selectFilterColor,
+        resetFilters,
+        onClickNoImage,
       }}
     >
       {children}

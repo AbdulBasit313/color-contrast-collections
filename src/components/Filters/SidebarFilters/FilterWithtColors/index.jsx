@@ -21,16 +21,21 @@ const ColorStyle = styled.div`
   border-radius: 4px;
   background-color: ${props => props.value};
   cursor: pointer;
-  border: ${({ selected }) => selected ? '1px solid #FEF7E5' : null};
+  border: ${({ selected, theme }) => selected ? `1px solid ${theme.colors.darkGrayText}` : null};
 `
 
-function FilterWithColors({ colors }) {
+function FilterWithColors({ colors, activeColor, setActiveColor }) {
   const { selectFilterColor } = useContext(ColorContext)
-  const [activeColor, setActiveColor] = useState(null)
 
   const onChangeColor = (id, color) => {
-    setActiveColor(id)
-    selectFilterColor(color)
+    if (activeColor === id) {
+      setActiveColor(null)
+      selectFilterColor(null)
+    }
+    else {
+      selectFilterColor(color)
+      setActiveColor(id)
+    }
   }
 
   return (
@@ -43,8 +48,7 @@ function FilterWithColors({ colors }) {
               value={color}
               onClick={() => onChangeColor(id, color)}
             />
-          ))
-          }
+          ))}
         </ColorContainer>
       </FilterContainer>
     </FilterWithColorsStyle>
