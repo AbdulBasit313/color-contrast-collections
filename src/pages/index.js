@@ -24,7 +24,7 @@ const IndexPage = () => {
             <GlobalStyles />
             <AppTitle />
             {width <= 768 && <SmallScreenFilter />}
-            <TopFilter />
+            {/* <TopFilter /> */}
             <Divider>
               {width > 768 && <SdiebarFilters />}
               <ContrastCardList />

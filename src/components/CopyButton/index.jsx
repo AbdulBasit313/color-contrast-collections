@@ -18,7 +18,12 @@ const CopyBtn = styled.button`
   margin-top: ${props => props.mt ? props.mt : 'unset'};
   cursor: pointer;
 
+  @media ${device.laptopL} {
+    font-size: 13px;
+    padding: 10px;
+  }
   @media ${device.tablet} {
+    font-size: 14px;
     padding: 10px;
   }
 `

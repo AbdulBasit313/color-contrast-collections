@@ -12,8 +12,10 @@ import { useState } from 'react'
 
 const SdiebarFiltersStyle = styled.div`
   margin-top: 40px;
+  margin-bottom: 30px;
   @media ${device.tablet} {
     margin-top: unset;
+    margin-bottom: unset;
     box-shadow: 0px 3px 20px #D1D5DF99;
     border-radius: 10px;
     padding-bottom: 20px;

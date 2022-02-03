@@ -23,6 +23,10 @@ const ColorCodeResult = styled.div`
   border-radius: 5px;
   background-color: ${props => props.code};
   border: ${props => checkLuminance(props.code) === true ? '2px solid #FEF7E5' : null};
+  @media ${device.laptopL} {
+    width: 35px;
+    height: 35px;
+  }
   @media ${device.tablet} {
     width: 35px;
     height: 35px;

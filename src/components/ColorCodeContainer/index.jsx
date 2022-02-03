@@ -11,8 +11,15 @@ const ColorCodeTitle = styled.p`
   color: ${props => props.theme.colors.textColor};
   margin-top: 14px;
   margin-bottom: 11px;
+  @media ${device.laptopL} {
+    margin-top: 11px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
   @media ${device.tablet} {
     font-size: 12px;
+    margin-top: 14px;
+    margin-bottom: 11px;
   }
 `
 
@@ -20,6 +27,12 @@ const ColorCodeWrapper = styled(AppBorder)`
   padding: 5px;
   display: grid;
   grid-template-columns: 45fr 55fr;
+  @media ${device.laptopL} {
+    padding: 4px;
+  }
+  @media ${device.tablet} {
+    padding: 5px;
+  }
 `
 
 function ColorCodeContainer({ title, code }) {

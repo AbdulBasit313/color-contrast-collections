@@ -10,6 +10,9 @@ const ContrastCardResultContainer = styled.div`
   padding: 40px 50px;
   display: flex;
   flex-direction: ${({ imageOnLeft }) => imageOnLeft ? 'row-reverse' : null};
+  @media ${device.laptopL} {
+    padding: 30px 35px;
+  }
   @media ${device.tablet} {
     padding: 22px;
     display: block;
@@ -28,6 +31,9 @@ const ContrastCardResultContainer = styled.div`
     color: ${props => props.foreground};
     margin-top: 18px;
     margin-bottom: 26px;
+    @media ${device.laptopL} {
+    margin-bottom: 16px;
+  }
     @media ${device.tablet} {
     margin-bottom: 14px;
     margin-top: 8px;
@@ -39,6 +45,9 @@ const ContrastCardResultContainer = styled.div`
     font-weight: normal;
     color: ${props => props.foreground};
     margin-bottom: 26px;
+    @media ${device.laptopL} {
+    margin-bottom: 16px;
+  }
     @media ${device.tablet} {
     font-size: 12px;
     margin-bottom: 14px;
@@ -52,6 +61,10 @@ const ContrastCardResultContainer = styled.div`
     padding: 8px 14px;
     cursor: pointer;
     border-radius: 20px;
+    @media ${device.laptopL} {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
     @media ${device.tablet} {
     /* border-radius: 2px; */
     padding: 5px 8px;
@@ -102,7 +115,7 @@ function ContrastCardResult({ foreground, background }) {
       foreground={foreground}
       imageOnLeft={filters.imageOnLeft}>
       <TextContainerStyle>
-        <h2>Contrast .02</h2>
+        <h2>Primary Title</h2>
         <h3>There are many variations</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         <button>Find More</button>

@@ -33,86 +33,67 @@ const ColorState = ({ children }) => {
     imageOnLeft: false,
   })
 
-  const resetFilters = () => {
-    console.log('reset')
-    setFilters({
-      darkText: false,
-      lightText: false,
-      allTextSelected: false,
-      selectedColor: null,
-      imageOnRight: false,
-      imageOnLeft: false,
-    })
-    setSelectedColor(null)
-    setTextColor({
-      darkText: false,
-      lightText: false,
-      allTextSelected: false,
-    })
-    setImagePostion({
-      imageOnRight: false,
-      imageOnLeft: false,
-      noImageSelected: false,
-    })
-  }
-
   const nearestColors = (color) => {
     const staticColor = hexToRgb(color)
 
-    console.log('==> || staticColor', staticColor)
-
-    setColorsData(data)
-
     setColorsData((prevState) => prevState.filter((item) => {
       let comingColor = hexToRgb(item.background)
-
-      console.log('==> || comingColor', comingColor)
 
       let r = nearbyColors(staticColor.r, comingColor.r)
       let g = nearbyColors(staticColor.g, comingColor.g)
       let b = nearbyColors(staticColor.b, comingColor.b)
 
-      console.log('==> || r', r)
-      console.log('==> || g', g)
-      console.log('==> || b', b)
-
       if (r && g && b) {
-        console.log('==> nearest colors <==', color)
         return true
       }
     }))
   }
 
   const applyFilters = () => {
+    const { imageOnRight, imageOnLeft, noImageSelected } = imagePostion
+    const { darkText, lightText, allTextSelected } = textColor
+
     setFilters({
-      imageOnRight: imagePostion.imageOnRight,
-      imageOnLeft: imagePostion.imageOnLeft,
-      darkText: textColor.darkText,
-      lightText: textColor.lightText,
-      allTextSelected: textColor.allTextSelected,
-      selectedColor: selectedColor
+      imageOnRight, imageOnLeft, noImageSelected,
+      darkText, lightText, allTextSelected,
+      selectedColor,
     })
-    if (selectedColor) {
-      console.log('this runs', selectedColor)
-      nearestColors(selectedColor)
-    }
-    if (textColor.darkText) {
+
+    if (darkText && !selectedColor) {
+      console.log('dark text runs')
       filterWithTextColors(false)
     }
-    if (textColor.lightText) {
+    if (lightText && !selectedColor) {
+      console.log('light text runs')
       filterWithTextColors(true)
     }
-    if (textColor.allTextSelected) {
+    if (allTextSelected && !selectedColor) {
+      console.log('all text selected runs')
       setColorsData(data)
     }
-    if (imagePostion.imageOnLeft || imagePostion.imageOnRight) {
+    if (selectedColor && !darkText && !lightText && !allTextSelected) {
+      console.log('selected color runs')
+      setColorsData(data)
+      nearestColors(selectedColor)
+    }
+
+    if (selectedColor && (darkText || lightText || allTextSelected)) {
+      console.log('color and text selected runs')
+      setColorsData(data)
+      if (!allTextSelected) {
+        filterWithTextColors(lightText ? true : false)
+      }
+      nearestColors(selectedColor)
+    }
+
+    if (imageOnLeft || imageOnRight) {
       setShowImage(true)
       setActiveTopFilter(4)
     }
-    if (!imagePostion.imageOnLeft || !imagePostion.imageOnRight) {
+    if (!imageOnLeft || !imageOnRight) {
       setActiveTopFilter(3)
     }
-    if (imagePostion.noImageSelected) {
+    if (noImageSelected) {
       setActiveTopFilter(3)
       setShowImage(false)
     }
@@ -122,7 +103,9 @@ const ColorState = ({ children }) => {
     // const filteringColors = colorsData.filter(item => (
     //   checkLuminance(item.foreground) === condition
     // ))
-    setColorsData(data)
+    if ((textColor.darkText || textColor.lightText) && !selectedColor) {
+      setColorsData(data)
+    }
     setColorsData((prevState) => prevState.filter(item => (
       checkLuminance(item.foreground) === condition
     )))
@@ -163,8 +146,6 @@ const ColorState = ({ children }) => {
     setEmptyFilter(false)
   }
 
-  console.log('agin running', textColor)
-
   const onClickLightText = () => {
     setTextColor({
       darkText: false,
@@ -184,12 +165,9 @@ const ColorState = ({ children }) => {
   }
 
   const selectFilterColor = (color) => {
-    console.log('color ==>>', color)
     setSelectedColor(color)
     setEmptyFilter(false)
   }
-
-  console.log('selectedColor', selectedColor)
 
   const onRemoveImage = () => {
     setShowImage(false)
@@ -200,11 +178,37 @@ const ColorState = ({ children }) => {
     setShowImage(true)
   }
 
+  const resetFilters = () => {
+    setFilters({
+      darkText: false,
+      lightText: false,
+      allTextSelected: false,
+      selectedColor: null,
+      imageOnRight: false,
+      imageOnLeft: false,
+    })
+    setSelectedColor(null)
+    setTextColor({
+      darkText: false,
+      lightText: false,
+      allTextSelected: false,
+    })
+    setImagePostion({
+      imageOnRight: false,
+      imageOnLeft: false,
+      noImageSelected: false,
+    })
+    setShowImage(false)
+    setEmptyFilter(true)
+    setColorsData(data)
+  }
+
   return (
     <ColorContext.Provider
       value={{
         activeTopFilter,
         setActiveTopFilter,
+        setEmptyFilter,
         colorsData,
         showImage,
         filters,

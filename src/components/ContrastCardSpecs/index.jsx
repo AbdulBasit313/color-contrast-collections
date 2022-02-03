@@ -10,6 +10,9 @@ const ContrastCardSpecsContainer = styled.div`
   padding: 0 30px 10px 30px;
   position: relative;
   overflow: hidden;
+  @media ${device.laptopL} {
+    padding: 0 14px 10px 14px;
+  }
   @media ${device.tablet} {
     padding: 0 14px 10px 14px;
   }
@@ -38,7 +41,7 @@ const ContrastCardSpecs = ({ foreground, background }) => {
           handleShowCode={handleShowCode}
           text="Show Code"
           bold
-          mt={width <= 768 ? '13px' : '24px'}
+          mt={width <= 768 ? '13px' : width <= 1440 ? '18px' : '24px'}
         />
       </div>
     </ContrastCardSpecsContainer>

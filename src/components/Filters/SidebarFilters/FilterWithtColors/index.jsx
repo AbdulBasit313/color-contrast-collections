@@ -25,12 +25,17 @@ const ColorStyle = styled.div`
 `
 
 function FilterWithColors({ colors, activeColor, setActiveColor }) {
-  const { selectFilterColor } = useContext(ColorContext)
+  const { selectFilterColor, textColor, setEmptyFilter } = useContext(ColorContext)
+
+  const { darkText, lightText, allTextSelected } = textColor
 
   const onChangeColor = (id, color) => {
     if (activeColor === id) {
       setActiveColor(null)
       selectFilterColor(null)
+      if (!darkText && !lightText && !allTextSelected) {
+        setEmptyFilter(true)
+      }
     }
     else {
       selectFilterColor(color)

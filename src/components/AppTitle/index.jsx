@@ -1,14 +1,16 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
 import { ColorContext } from '../../context/colors/colorContext'
-import { data } from '../../data'
 import { device } from '../../styles/BreakPoints'
 
 const TitleStyle = styled.div`
   margin-top: 50px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin-bottom: 10px;
   text-align: center;
+  @media ${device.laptopL} {
+    margin-top: 28px;
+  }
   @media ${device.tablet} {
     margin-top: 28px;
     margin-bottom: 25px;
@@ -19,9 +21,12 @@ const Title = styled.h1`
   color: ${props => props.theme.colors.textColor};
   font-size: 40px;
   font-weight: bold;
+  @media ${device.laptopL} {
+  font-size: 30px;
+  }
   @media ${device.tablet} {
   font-size: 20px;
-}
+  }
 `
 const Subtitle = styled.div`
   margin-top: 12px;

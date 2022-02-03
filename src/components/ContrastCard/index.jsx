@@ -11,6 +11,10 @@ const CardContainer = styled(AppBorder)`
   grid-template-columns: 65fr 35fr;
   margin-top: 40px;
 
+  @media ${device.laptopL} {
+    margin-top: 20px;
+  }
+
   @media ${device.tablet} {
     display: block;
     margin-top: 20px;
