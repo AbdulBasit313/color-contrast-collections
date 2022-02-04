@@ -10,6 +10,7 @@ const ColorState = ({ children }) => {
   const [colorsData, setColorsData] = useState(data)
   const [showImage, setShowImage] = useState(false)
   const [emptyFilter, setEmptyFilter] = useState(true)
+  const [activeColor, setActiveColor] = useState(null)
 
   const [textColor, setTextColor] = useState({
     darkText: false,
@@ -227,6 +228,8 @@ const ColorState = ({ children }) => {
         selectFilterColor,
         resetFilters,
         onClickNoImage,
+        activeColor,
+        setActiveColor,
       }}
     >
       {children}

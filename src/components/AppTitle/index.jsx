@@ -41,6 +41,11 @@ const Subtitle = styled.div`
 }
 `
 
+const Highlight = styled.span`
+  color: #212121;
+  font-size: 15px;
+`
+
 function AppTitle() {
   const { colorsData } = useContext(ColorContext)
 
@@ -48,8 +53,8 @@ function AppTitle() {
     <TitleStyle>
       <Title>Welcome to Contrast Picker</Title>
       <Subtitle>
-        <p>{colorsData.length} curated text with background colors contrast</p>
-        <p>We help you to pick best contrasts for your websites, landing pages, blogs etc.</p>
+        <p><Highlight>{colorsData.length}</Highlight> curated <Highlight>"Background with Text"</Highlight> colors contrast</p>
+        <p>We help you to pick best contrast for your websites, landing pages, blogs etc.</p>
       </Subtitle>
     </TitleStyle>
   )

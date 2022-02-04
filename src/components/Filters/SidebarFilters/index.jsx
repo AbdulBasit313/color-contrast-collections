@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import RefreshIcon from '../../../assets/icons/refresh-icon.svg'
 import { filterWithColor } from '../../../config/filterr'
 import { ColorContext } from '../../../context/colors/colorContext'
 import useWindowSize from '../../../hooks/useWindowSize'
@@ -7,8 +8,6 @@ import { device } from '../../../styles/BreakPoints'
 import FilterWithColors from './FilterWithtColors'
 import FilterWithImage from './FilterWithtImage'
 import FilterWithText from './FilterWithtText'
-import RefreshIcon from '../../../assets/icons/refresh-icon.svg'
-import { useState } from 'react'
 
 const SdiebarFiltersStyle = styled.div`
   margin-top: 40px;
@@ -80,8 +79,8 @@ const ResetBtn = styled.button`
 `
 
 function SdiebarFilters({ closeSmallScreenFilter }) {
-  const [activeColor, setActiveColor] = useState(null)
-  const { applyFilters, filters, emptyFilter, resetFilters } = useContext(ColorContext)
+  // const [activeColor, setActiveColor] = useState(null)
+  const { applyFilters, filters, emptyFilter, resetFilters, activeColor, setActiveColor } = useContext(ColorContext)
   const [width] = useWindowSize()
 
   const applyAllFilter = () => {
