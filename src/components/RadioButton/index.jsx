@@ -10,7 +10,7 @@ const RadioLabelStyle = styled.label`
 const RadioButtonStyle = styled.input`
   cursor: pointer;
   @media ${device.tablet} {
-    vertical-align: baseline;
+    vertical-align: text-top;
   }
 `
 

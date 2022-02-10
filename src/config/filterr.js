@@ -41,7 +41,7 @@ const filterWithColor = [
     id: 1,
   },
   {
-    color: '#74FD11',
+    color: '#8B4513',
     id: 2,
   },
   {
@@ -57,7 +57,7 @@ const filterWithColor = [
     id: 5,
   },
   {
-    color: '#AB33F6',
+    color: '#EAEAEA',
     id: 6,
   },
   {

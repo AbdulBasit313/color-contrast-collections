@@ -1,6 +1,14 @@
 export const data = [
   {
+    background: '#D9DD92',
+    foreground: '#000000'
+  },
+  {
     background: '#767FAD',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#4D1727',
     foreground: '#FFFFFF'
   },
   {
@@ -72,6 +80,10 @@ export const data = [
     foreground: '#46474E'
   },
   {
+    background: '#1BA1BF',
+    foreground: '#FFFFFF'
+  },
+  {
     background: '#212121',
     foreground: '#FFFFFF'
   },
@@ -96,6 +108,10 @@ export const data = [
     foreground: '#1F7B8F'
   },
   {
+    background: '#FFFFFF',
+    foreground: '#220F5F'
+  },
+  {
     background: '#F7D708',
     foreground: '#333333'
   },
@@ -105,6 +121,10 @@ export const data = [
   },
   {
     background: '#0A2540',
+    foreground: '#FFFFFF'
+  },
+  {
+    background: '#481A72',
     foreground: '#FFFFFF'
   },
 ]

@@ -20,7 +20,7 @@ const ContrastCardResultContainer = styled.div`
   h2 {
     font-size: 20px;
     font-weight: 600;
-    color: ${props => props.foreground};
+    color: ${({ foreground }) => foreground};
     @media ${device.tablet} {
     font-size: 14px;
   }
@@ -28,25 +28,27 @@ const ContrastCardResultContainer = styled.div`
   h3 {
     font-size: 26px;
     font-weight: bold;
-    color: ${props => props.foreground};
+    color: ${({ foreground }) => foreground};
     margin-top: 18px;
     margin-bottom: 26px;
     @media ${device.laptopL} {
-    margin-bottom: 16px;
-  }
+      margin-bottom: 16px;
+    }
     @media ${device.tablet} {
-    margin-bottom: 14px;
-    margin-top: 8px;
-    font-size: 16px;
-  }
+      margin-bottom: 14px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
   }
   p {
     font-size: 14px;
     font-weight: normal;
     color: ${props => props.foreground};
     margin-bottom: 26px;
+    line-height: 1.6; 
     @media ${device.laptopL} {
     margin-bottom: 16px;
+    line-height: 1.4; 
   }
     @media ${device.tablet} {
     font-size: 12px;
@@ -55,8 +57,8 @@ const ContrastCardResultContainer = styled.div`
   }
   button {
     outline: none;
-    border: 1px solid ${props => props.foreground};
-    color: ${props => props.foreground};
+    border: 1px solid ${({ foreground }) => foreground};
+    color: ${({ foreground }) => foreground};
     background-color: transparent;
     padding: 8px 14px;
     cursor: pointer;
