@@ -13,7 +13,6 @@ const TopFilterStyle = styled.div`
   }
   ul {
     text-decoration: none;
-    list-style-type: none;
     @media ${device.tablet} {
       display: flex;
       justify-content: space-between;

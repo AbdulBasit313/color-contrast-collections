@@ -20,11 +20,13 @@ const FooterStyle = styled.footer`
   }
   ul {
     display: flex;
+    @media ${device.tablet} {
+    margin: 0;
+  }
     li {
       color: ${props => props.theme.colors.textColor};
       font-size: 14px;
       text-decoration: none;
-      list-style-type: none;
       margin-right: 10px;
       cursor: pointer;
       &:not(:last-child) {
