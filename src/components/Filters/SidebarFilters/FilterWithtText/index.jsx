@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { ColorContext } from '../../../../context/colors/colorContext'
-import RadionButton from '../../../RadioButton'
+import RadioButton from '../../../RadioButton'
 import FilterContainer from '../FilterContainer'
 
 const FilterWithTextStyle = styled.div`
@@ -19,7 +19,7 @@ function FilterWithText() {
     <FilterWithTextStyle>
       <FilterContainer title='Text'>
         <filedset>
-          <RadionButton
+          <RadioButton
             name="dark-text"
             id="dark-text"
             value='Dark Text'
@@ -27,7 +27,7 @@ function FilterWithText() {
             onChange={onClickDarkText}
             checked={textColor.darkText}
           />
-          <RadionButton
+          <RadioButton
             name="light-text"
             id="light-text"
             value='Light Text'
@@ -35,7 +35,7 @@ function FilterWithText() {
             onChange={onClickLightText}
             checked={textColor.lightText}
           />
-          <RadionButton
+          <RadioButton
             name="all-text"
             id="all-text"
             value='All Text'

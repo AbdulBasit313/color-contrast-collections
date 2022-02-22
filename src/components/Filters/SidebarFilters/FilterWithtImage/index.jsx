@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { ColorContext } from '../../../../context/colors/colorContext'
-import RadionButton from '../../../RadioButton'
+import RadioButton from '../../../RadioButton'
 import FilterContainer from '../FilterContainer'
 
 const FilterWithImageStyle = styled.div`
@@ -20,7 +20,7 @@ function FilterWithImage() {
   return (
     <FilterWithImageStyle>
       <FilterContainer title='Image'>
-        <RadionButton
+        <RadioButton
           name="image-on-left"
           id="image-on-left"
           value='Image on Left'
@@ -28,7 +28,7 @@ function FilterWithImage() {
           onChange={onClickImageOnLeft}
           checked={imagePostion.imageOnLeft}
         />
-        <RadionButton
+        <RadioButton
           name="image-on-right"
           id="image-on-right"
           value='Image on Right'
@@ -36,7 +36,7 @@ function FilterWithImage() {
           onChange={onClickImageOnRight}
           checked={imagePostion.imageOnRight}
         />
-        <RadionButton
+        <RadioButton
           name="no-image"
           id="no-image"
           value='No Image'

@@ -8,7 +8,7 @@ import CopyButton from '../CopyButton'
 const ColorCodeTitle = styled.p`
   font-size: 16px;
   font-weight: 600;
-  color: ${props => props.theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.textColor};
   margin-top: 14px;
   margin-bottom: 11px;
   @media ${device.laptopL} {

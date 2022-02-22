@@ -1,7 +1,7 @@
 export const data = [
   {
-    background: '#f6e5bd',
-    foreground: '#1C2334'
+    background: '#FFD7D5',
+    foreground: '#3D0000'
   },
   {
     background: '#D9DD92',
@@ -24,12 +24,24 @@ export const data = [
     foreground: '#FCFCFC'
   },
   {
+    background: '#F6E5BD',
+    foreground: '#1C2334'
+  },
+  {
+    background: '#FF4382',
+    foreground: '#111111'
+  },
+  {
     background: '#E0F0E5',
     foreground: '#2B2839'
   },
   {
     background: '#6967CE',
     foreground: '#FCFCFC'
+  },
+  {
+    background: '#F6EC3D',
+    foreground: '#111111'
   },
   {
     background: '#4A154B',
@@ -64,11 +76,15 @@ export const data = [
     foreground: '#2B2839'
   },
   {
-    background: '#f3eee4',
+    background: '#F3EEE4',
     foreground: '#1C2334'
   },
   {
-    background: '#e5bf55',
+    background: '#35322D',
+    foreground: '#FFB03B'
+  },
+  {
+    background: '#E5BF55',
     foreground: '#1C2334'
   },
   {
@@ -132,6 +148,10 @@ export const data = [
     foreground: '#333333'
   },
   {
+    background: '#FFFAF3',
+    foreground: '#5F5950'
+  },
+  {
     background: '#0A2540',
     foreground: '#FFFFFF'
   },
@@ -142,6 +162,10 @@ export const data = [
   {
     background: '#1B2331',
     foreground: '#FFFFFF'
+  },
+  {
+    background: '#1A1814',
+    foreground: '#CDA45E'
   },
   {
     background: '#EEEEEC',

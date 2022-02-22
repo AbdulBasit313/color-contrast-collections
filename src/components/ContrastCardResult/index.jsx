@@ -1,11 +1,11 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useContext } from 'react'
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { ColorContext } from '../../context/colors/colorContext'
 import { device } from '../../styles/BreakPoints'
 
 const ContrastCardResultContainer = styled.div`
-  background: ${props => props.background};
+  background: ${({ background }) => background};
   border-radius: 5px;
   padding: 40px 50px;
   display: flex;
@@ -43,7 +43,7 @@ const ContrastCardResultContainer = styled.div`
   p {
     font-size: 14px;
     font-weight: normal;
-    color: ${props => props.foreground};
+    color: ${({ foreground }) => foreground};
     margin-bottom: 26px;
     line-height: 1.6; 
     @media ${device.laptopL} {
@@ -77,8 +77,16 @@ const ContrastCardResultContainer = styled.div`
    width: 291px;
    height: 190px;
    margin-left: 20px;
-   margin-left: ${({ imageOnLeft }) => imageOnLeft ? 'unset' : '20px'};
-   margin-right: ${({ imageOnLeft }) => imageOnLeft ? '30px' : 'unset'};
+   ${(props) => props.imageOnLeft ?
+    css`
+    margin-left: unset;
+    margin-right: 30px;
+   `:
+    css`
+    margin-left: 20px;
+    margin-right: unset;
+   `
+  }
    @media ${device.tablet} {
     /* width: 321px; */
     /* width: 100%; */

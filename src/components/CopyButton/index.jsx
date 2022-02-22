@@ -4,18 +4,18 @@ import styled from 'styled-components'
 import { device } from '../../styles/BreakPoints'
 
 const CopyBtn = styled.button`
-  background: ${props => props.theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
   font-size: 14px;
-  color: ${props => props.theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.textColor};
   border: none;
   outline: none;
   padding: 16px;
   /* min-width: 168px; */
   /* width: 40%; */
   width: 100%;
-  font-weight: ${props => props.bold ? 'bold' : 'normal'};
-  margin-top: ${props => props.mt ? props.mt : 'unset'};
+  font-weight: ${({ bold }) => bold ? 'bold' : 'normal'};
+  margin-top: ${({ mt }) => mt ? mt : 'unset'};
   cursor: pointer;
 
   @media ${device.laptopL} {
