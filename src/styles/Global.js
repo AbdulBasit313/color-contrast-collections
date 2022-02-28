@@ -1,70 +1,10 @@
 import styled, { createGlobalStyle, css } from "styled-components"
-import PoppinsBlack from "../assets/fonts/Poppins-Black.ttf"
-import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf"
-import PoppinsExtraBold from "../assets/fonts/Poppins-ExtraBold.ttf"
-import PoppinsExtraLight from "../assets/fonts/Poppins-ExtraLight.ttf"
-import PoppinsLight from "../assets/fonts/Poppins-Light.ttf"
-import PoppinsMedium from "../assets/fonts/Poppins-Medium.ttf"
-import PoppinsRegular from "../assets/fonts/Poppins-Regular.ttf"
-import PoppinsSemiBold from "../assets/fonts/Poppins-SemiBold.ttf"
-import PoppinsThin from "../assets/fonts/Poppins-Thin.ttf"
 import { device } from "./BreakPoints"
+import fontsCss from "./fonts.module.css"
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face {
-      font-family: 'Poppins';
-      src: url(${PoppinsBlack}) format('truetype');
-      font-style: normal;
-      font-weight: 900;
-    }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsExtraBold}) format('truetype');
-    font-style: normal;
-    font-weight: 800;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsBold}) format('truetype');
-    font-style: normal;
-    font-weight: 700;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsSemiBold}) format('truetype');
-    font-style: normal;
-    font-weight: 600;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsMedium}) format('truetype');
-    font-style: normal;
-    font-weight: 500;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsRegular}) format('truetype');
-    font-style: normal;
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsLight}) format('truetype');
-    font-style: normal;
-    font-weight: 300;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsExtraLight}) format('truetype');
-    font-style: normal;
-    font-weight: 200;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url(${PoppinsThin}) format('truetype');
-    font-style: normal;
-    font-weight: 100;
-  }
+ ${fontsCss} // this works as a normal styled css
+ 
  /* Box sizing rules */
 *,
 *::before,
