@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-import { useContext } from 'react'
-import styled from 'styled-components'
-import { ColorContext } from '../../../../context/colors/colorContext'
-import FilterContainer from '../FilterContainer'
+import React, { useContext } from "react"
+import styled from "styled-components"
+import { ColorContext } from "../../../../context/colors/colorContext"
+import FilterContainer from "../FilterContainer"
 
-const FilterWithColorsStyle = styled.div`
-
-`
+const FilterWithColorsStyle = styled.div``
 
 const ColorContainer = styled.div`
   display: grid;
@@ -19,13 +16,15 @@ const ColorStyle = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 4px;
-  background-color: ${props => props.value};
+  background-color: ${(props) => props.value};
   cursor: pointer;
-  border: ${({ selected, theme }) => selected ? `1px solid ${theme.colors.darkGrayText}` : null};
+  border: ${({ selected, theme }) =>
+    selected ? `1px solid ${theme.colors.darkGrayText}` : null};
 `
 
 function FilterWithColors({ colors, activeColor, setActiveColor }) {
-  const { selectFilterColor, textColor, setEmptyFilter } = useContext(ColorContext)
+  const { selectFilterColor, textColor, setEmptyFilter } =
+    useContext(ColorContext)
 
   const { darkText, lightText, allTextSelected } = textColor
 
@@ -36,8 +35,7 @@ function FilterWithColors({ colors, activeColor, setActiveColor }) {
       if (!darkText && !lightText && !allTextSelected) {
         setEmptyFilter(true)
       }
-    }
-    else {
+    } else {
       selectFilterColor(color)
       setActiveColor(id)
     }
@@ -45,10 +43,11 @@ function FilterWithColors({ colors, activeColor, setActiveColor }) {
 
   return (
     <FilterWithColorsStyle>
-      <FilterContainer title='Color'>
+      <FilterContainer title="Color">
         <ColorContainer>
           {colors.map(({ color, id }) => (
             <ColorStyle
+              key={id}
               selected={id === activeColor ? true : false}
               value={color}
               onClick={() => onChangeColor(id, color)}

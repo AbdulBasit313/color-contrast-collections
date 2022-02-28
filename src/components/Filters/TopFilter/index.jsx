@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
-import Star from '../../../assets/icons/star.svg'
-import { topFilter } from '../../../config/filterr'
-import { ColorContext } from '../../../context/colors/colorContext'
-import { device } from '../../../styles/BreakPoints'
+import React, { useContext, useState } from "react"
+import styled from "styled-components"
+import Star from "../../../assets/icons/star.svg"
+import { topFilter } from "../../../config/filterr"
+import { ColorContext } from "../../../context/colors/colorContext"
+import { device } from "../../../styles/BreakPoints"
 
 const TopFilterStyle = styled.div`
   /* padding-top: 60px; */
@@ -16,7 +16,7 @@ const TopFilterStyle = styled.div`
     @media ${device.tablet} {
       display: flex;
       justify-content: space-between;
-      }
+    }
     li {
       display: inline-block;
       color: ${({ theme: { colors } }) => colors.grayText};
@@ -37,28 +37,27 @@ const TopFilterStyle = styled.div`
       padding: 7px 14px;
       @media ${device.tablet} {
         padding: 5px 11px;
-    }
+      }
     }
     .star-icon {
       margin-right: 6px;
       @media ${device.tablet} {
-       width: 10px;
-       height: 10px;
-       margin-right: 4px;
-    }
+        width: 10px;
+        height: 10px;
+        margin-right: 4px;
+      }
     }
     .filter-text {
       @media ${device.tablet} {
         margin-left: 4px;
-    }
+      }
     }
   }
 `
 
 function TopFilter() {
-  const {
-    activeTopFilter, setActiveTopFilter, onRemoveImage, onShowImage
-  } = useContext(ColorContext)
+  const { activeTopFilter, setActiveTopFilter, onRemoveImage, onShowImage } =
+    useContext(ColorContext)
 
   const textOnlyFilter = (id) => {
     setActiveTopFilter(id)
@@ -87,12 +86,15 @@ function TopFilter() {
       <ul>
         {topFilter.map(({ id, name }) => (
           <li
-            className={id === activeTopFilter ? 'box selected' : 'box'}
+            key={id}
+            className={id === activeTopFilter ? "box selected" : "box"}
             // onClick={() => onChangeFilter(id)}
-            onClick={() => id === 3 ? textOnlyFilter(id) : textWithImageFilter(id)}
+            onClick={() =>
+              id === 3 ? textOnlyFilter(id) : textWithImageFilter(id)
+            }
           >
             {id === 1 && <Star className="star-icon" />}
-            <span className='filter-text'>{name}</span>
+            <span className="filter-text">{name}</span>
           </li>
         ))}
       </ul>

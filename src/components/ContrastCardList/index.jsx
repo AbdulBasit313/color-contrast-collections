@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
-import { ColorContext } from '../../context/colors/colorContext'
-import { device } from '../../styles/BreakPoints'
-import ContrastCard from '../ContrastCard'
+import React, { useContext } from "react"
+import styled from "styled-components"
+import { ColorContext } from "../../context/colors/colorContext"
+import { device } from "../../styles/BreakPoints"
+import ContrastCard from "../ContrastCard"
 
 const ContrastCardsWrapper = styled.div`
   margin-bottom: 70px;
@@ -21,13 +21,18 @@ const NoRecord = styled.h2`
 function ContrastCardList() {
   const { colorsData } = useContext(ColorContext)
 
-  console.log('colorsData', colorsData)
   return (
     <ContrastCardsWrapper>
-      {colorsData?.map(({ background, foreground }) => (
-        <ContrastCard foreground={foreground} background={background} />
+      {colorsData?.map(({ background, foreground }, index) => (
+        <ContrastCard
+          key={index}
+          foreground={foreground}
+          background={background}
+        />
       ))}
-      {!colorsData.length && <NoRecord>Sorry we didn't find any match</NoRecord>}
+      {!colorsData.length && (
+        <NoRecord>Sorry we didn't find any match</NoRecord>
+      )}
     </ContrastCardsWrapper>
   )
 }

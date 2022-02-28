@@ -1,22 +1,20 @@
-import React from 'react'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-import styled from 'styled-components'
-import { device } from '../../styles/BreakPoints'
+import React from "react"
+import { CopyToClipboard } from "react-copy-to-clipboard"
+import styled from "styled-components"
+import { device } from "../../styles/BreakPoints"
 
 const CopyBtn = styled.button`
   background: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.textColor};
-  border: none;
   outline: none;
   padding: 16px;
   /* min-width: 168px; */
   /* width: 40%; */
   width: 100%;
-  font-weight: ${({ bold }) => bold ? 'bold' : 'normal'};
-  margin-top: ${({ mt }) => mt ? mt : 'unset'};
-  cursor: pointer;
+  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  margin-top: ${({ mt }) => (mt ? mt : "unset")};
 
   @media ${device.laptopL} {
     font-size: 13px;

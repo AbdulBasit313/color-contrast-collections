@@ -1,15 +1,15 @@
 import { StaticImage } from "gatsby-plugin-image"
-import React, { useContext } from 'react'
+import React, { useContext } from "react"
 import styled, { css } from "styled-components"
-import { ColorContext } from '../../context/colors/colorContext'
-import { device } from '../../styles/BreakPoints'
+import { ColorContext } from "../../context/colors/colorContext"
+import { device } from "../../styles/BreakPoints"
 
 const ContrastCardResultContainer = styled.div`
   background: ${({ background }) => background};
   border-radius: 5px;
   padding: 40px 50px;
   display: flex;
-  flex-direction: ${({ imageOnLeft }) => imageOnLeft ? 'row-reverse' : null};
+  flex-direction: ${({ imageOnLeft }) => (imageOnLeft ? "row-reverse" : null)};
   @media ${device.laptopL} {
     padding: 30px 35px;
   }
@@ -22,8 +22,8 @@ const ContrastCardResultContainer = styled.div`
     font-weight: 600;
     color: ${({ foreground }) => foreground};
     @media ${device.tablet} {
-    font-size: 14px;
-  }
+      font-size: 14px;
+    }
   }
   h3 {
     font-size: 26px;
@@ -45,15 +45,15 @@ const ContrastCardResultContainer = styled.div`
     font-weight: normal;
     color: ${({ foreground }) => foreground};
     margin-bottom: 26px;
-    line-height: 1.6; 
+    line-height: 1.6;
     @media ${device.laptopL} {
-    margin-bottom: 16px;
-    line-height: 1.4; 
-  }
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
     @media ${device.tablet} {
-    font-size: 12px;
-    margin-bottom: 14px;
-  }
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
   }
   button {
     outline: none;
@@ -61,46 +61,45 @@ const ContrastCardResultContainer = styled.div`
     color: ${({ foreground }) => foreground};
     background-color: transparent;
     padding: 8px 14px;
-    cursor: pointer;
     border-radius: 20px;
     @media ${device.laptopL} {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
+      padding: 6px 10px;
+      font-size: 12px;
+    }
     @media ${device.tablet} {
-    /* border-radius: 2px; */
-    padding: 5px 8px;
-    font-size: 12px;
+      /* border-radius: 2px; */
+      padding: 5px 8px;
+      font-size: 12px;
+    }
   }
-}
- .card-image {
-   width: 291px;
-   height: 190px;
-   margin-left: 20px;
-   ${(props) => props.imageOnLeft ?
-    css`
-    margin-left: unset;
-    margin-right: 30px;
-   `:
-    css`
+  .card-image {
+    width: 291px;
+    height: 190px;
     margin-left: 20px;
-    margin-right: unset;
-   `
+    ${(props) =>
+      props.imageOnLeft
+        ? css`
+            margin-left: unset;
+            margin-right: 30px;
+          `
+        : css`
+            margin-left: 20px;
+            margin-right: unset;
+          `}
+    @media ${device.tablet} {
+      /* width: 321px; */
+      /* width: 100%; */
+      /* height: 138px; */
+      /* width: 100%; */
+      /* height: 100%; */
+      /* object-fit: contain; */
+      width: unset;
+      height: unset;
+      /* height: 80%; */
+      margin-top: 20px;
+      margin-left: unset;
+    }
   }
-   @media ${device.tablet} {
-    /* width: 321px; */
-    /* width: 100%; */
-    /* height: 138px; */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* object-fit: contain; */
-    width:unset;
-    height: unset;
-    /* height: 80%; */
-    margin-top: 20px;
-    margin-left: unset;
-   }
- }
 `
 
 const TextContainerStyle = styled.div`
@@ -123,11 +122,16 @@ function ContrastCardResult({ foreground, background }) {
     <ContrastCardResultContainer
       background={background}
       foreground={foreground}
-      imageOnLeft={filters.imageOnLeft}>
+      imageOnLeft={filters.imageOnLeft}
+    >
       <TextContainerStyle>
         <h2>Primary Title</h2>
         <h3>There are many variations</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s.
+        </p>
         <button>Find More</button>
       </TextContainerStyle>
       {showImage && (

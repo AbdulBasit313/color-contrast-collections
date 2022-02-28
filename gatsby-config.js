@@ -1,7 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Color Contrast",
+    title: "Color Contrast Collections",
+    siteUrl: "https://color-contrast-collection.netlify.app/",
+    description:
+      "We help you to pick best contrast for your landing pages, stores, and blogs",
+    author: "Abdul Basit",
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -28,9 +31,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
   ],
 }

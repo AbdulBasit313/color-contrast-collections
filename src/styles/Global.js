@@ -1,9 +1,70 @@
-import styled, { createGlobalStyle, css } from "styled-components";
-import { device } from "./BreakPoints";
+import styled, { createGlobalStyle, css } from "styled-components"
+import PoppinsBlack from "../assets/fonts/Poppins-Black.ttf"
+import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf"
+import PoppinsExtraBold from "../assets/fonts/Poppins-ExtraBold.ttf"
+import PoppinsExtraLight from "../assets/fonts/Poppins-ExtraLight.ttf"
+import PoppinsLight from "../assets/fonts/Poppins-Light.ttf"
+import PoppinsMedium from "../assets/fonts/Poppins-Medium.ttf"
+import PoppinsRegular from "../assets/fonts/Poppins-Regular.ttf"
+import PoppinsSemiBold from "../assets/fonts/Poppins-SemiBold.ttf"
+import PoppinsThin from "../assets/fonts/Poppins-Thin.ttf"
+import { device } from "./BreakPoints"
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+  @font-face {
+      font-family: 'Poppins';
+      src: url(${PoppinsBlack}) format('truetype');
+      font-style: normal;
+      font-weight: 900;
+    }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsExtraBold}) format('truetype');
+    font-style: normal;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsBold}) format('truetype');
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsSemiBold}) format('truetype');
+    font-style: normal;
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsMedium}) format('truetype');
+    font-style: normal;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsRegular}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsLight}) format('truetype');
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsExtraLight}) format('truetype');
+    font-style: normal;
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url(${PoppinsThin}) format('truetype');
+    font-style: normal;
+    font-weight: 100;
+  }
  /* Box sizing rules */
 *,
 *::before,
@@ -17,7 +78,8 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    font-family: ${(props) => props.theme.fonts.poppins}, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: ${(props) => props.theme.fonts.poppins}, sans-serif; */
   } 
 h1,
 h2,
@@ -32,6 +94,13 @@ dl,
 dd {
     padding: 0;
     margin: 0;
+}
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
 }
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
@@ -79,7 +148,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-`;
+`
 
 export const Container = styled.div`
   width: 100%;
@@ -87,19 +156,19 @@ export const Container = styled.div`
   max-width: 1640px;
   margin: 0 auto;
   padding: 0 15px;
-`;
+`
 
 export const AppBorder = styled.div`
   border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: 5px;
-`;
+`
 
 export const mt24 = styled.div`
   margin-top: 24px;
   @media ${device.tablet} {
     margin-top: 13px;
   }
-`;
+`
 
 export const Divider = styled.div`
   display: grid;
@@ -109,10 +178,10 @@ export const Divider = styled.div`
     margin-bottom: 30px;
     display: block;
   }
-`;
+`
 
 export const AbsCenter = css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
+`
