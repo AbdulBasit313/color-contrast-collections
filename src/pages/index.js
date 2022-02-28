@@ -21,9 +21,9 @@ const HomePage = () => {
   return (
     <>
       <SEO title="Home" />
-      <ColorState>
-        <ThemeProvider theme={theme}>
-          <GlobalStyles />
+      <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <ColorState>
           {/* <Typography /> */}
           <Navbar />
           <Container>
@@ -48,8 +48,8 @@ const HomePage = () => {
             )} */}
           </Container>
           <Footer />
-        </ThemeProvider>
-      </ColorState>
+        </ColorState>
+      </ThemeProvider>
     </>
   )
 }
