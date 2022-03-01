@@ -32,12 +32,21 @@ export const data = [
     foreground: "#111111",
   },
   {
+    background: "#BC8F8F",
+    foreground: "#FFFAFA",
+  },
+  {
     background: "#E0F0E5",
     foreground: "#2B2839",
   },
   {
     background: "#FBF6C7",
     foreground: "#25224A",
+  },
+  // this one is success color
+  {
+    background: "#D3FBEB",
+    foreground: "#075A39",
   },
   {
     background: "#6967CE",
@@ -50,6 +59,10 @@ export const data = [
   {
     background: "#4A154B",
     foreground: "#F3E7F3",
+  },
+  {
+    background: "#4465AD",
+    foreground: "#FFFFFF",
   },
   {
     background: "#ECEB98",
@@ -176,8 +189,20 @@ export const data = [
     foreground: "#2B2B2B",
   },
   {
+    background: "#49745E",
+    foreground: "#FFFFFF",
+  },
+  {
     background: "#AB55FE",
     foreground: "#FFFFFF",
+  },
+  {
+    background: "#FFF9F9",
+    foreground: "#292A2C",
+  },
+  {
+    background: "#D6CA34",
+    foreground: "#151515",
   },
 ]
 
