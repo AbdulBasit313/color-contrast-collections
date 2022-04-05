@@ -49,6 +49,8 @@ const Highlight = styled.span`
 function AppTitle() {
   const { colorsData } = useContext(ColorContext)
 
+  console.log("length", colorsData?.length)
+
   return (
     <TitleStyle>
       <Title>Welcome to Contrast Picker</Title>

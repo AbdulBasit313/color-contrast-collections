@@ -1,15 +1,15 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import RefreshIcon from "../../../assets/icons/refresh-icon.svg"
-import { filterWithColor } from "../../../config/filterr"
+import { filterWithColor } from "../../../config/filter"
 import { ColorContext } from "../../../context/colors/colorContext"
 import useWindowSize from "../../../hooks/useWindowSize"
 import { device } from "../../../styles/BreakPoints"
-import FilterWithColors from "./FilterWithtColors"
-import FilterWithImage from "./FilterWithtImage"
-import FilterWithText from "./FilterWithtText"
+import FilterWithColors from "./FilterWithColors"
+import FilterWithImage from "./FilterWithImage"
+import FilterWithText from "./FilterWithText"
 
-const SdiebarFiltersStyle = styled.div`
+const SidebarFiltersStyle = styled.div`
   margin-top: 40px;
   margin-bottom: 30px;
   @media ${device.tablet} {
@@ -99,7 +99,7 @@ function SdiebarFilters({ closeSmallScreenFilter }) {
   }
 
   return (
-    <SdiebarFiltersStyle>
+    <SidebarFiltersStyle>
       <Title>Filters</Title>
       <FilterWithText />
       <FilterWithColors
@@ -116,7 +116,7 @@ function SdiebarFilters({ closeSmallScreenFilter }) {
           Apply
         </ApplyBtn>
       </FilterActionsContainer>
-    </SdiebarFiltersStyle>
+    </SidebarFiltersStyle>
   )
 }
 

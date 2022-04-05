@@ -2,10 +2,14 @@ import React, { useState } from "react"
 import { checkLuminance } from "../../config/checkLuminance"
 import { hexToRgb } from "../../config/colorFormat"
 import { nearbyColors } from "../../config/nearbyColors"
-import { data } from "../../data"
+// import { data } from "../../data"
+import useColorContrast from "../../hooks/useColorContrast"
 import { ColorContext } from "./colorContext"
 
 const ColorState = ({ children }) => {
+  const data = useColorContrast()
+
+  console.log("data", data)
   const [activeTopFilter, setActiveTopFilter] = useState(1)
   const [colorsData, setColorsData] = useState(data)
   const [showImage, setShowImage] = useState(false)
@@ -17,7 +21,7 @@ const ColorState = ({ children }) => {
     lightText: false,
     allTextSelected: false,
   })
-  const [imagePostion, setImagePostion] = useState({
+  const [imagePosition, setImagePosition] = useState({
     imageOnRight: false,
     imageOnLeft: false,
     noImageSelected: false,
@@ -53,7 +57,7 @@ const ColorState = ({ children }) => {
   }
 
   const applyFilters = () => {
-    const { imageOnRight, imageOnLeft, noImageSelected } = imagePostion
+    const { imageOnRight, imageOnLeft, noImageSelected } = imagePosition
     const { darkText, lightText, allTextSelected } = textColor
 
     setFilters({
@@ -114,7 +118,7 @@ const ColorState = ({ children }) => {
   }
 
   const onClickImageOnRight = () => {
-    setImagePostion({
+    setImagePosition({
       imageOnRight: true,
       imageOnLeft: false,
       noImageSelected: false,
@@ -123,7 +127,7 @@ const ColorState = ({ children }) => {
   }
 
   const onClickImageOnLeft = () => {
-    setImagePostion({
+    setImagePosition({
       imageOnRight: false,
       imageOnLeft: true,
       noImageSelected: false,
@@ -131,7 +135,7 @@ const ColorState = ({ children }) => {
     setEmptyFilter(false)
   }
   const onClickNoImage = () => {
-    setImagePostion({
+    setImagePosition({
       imageOnRight: false,
       imageOnLeft: false,
       noImageSelected: true,
@@ -200,7 +204,7 @@ const ColorState = ({ children }) => {
       lightText: false,
       allTextSelected: false,
     })
-    setImagePostion({
+    setImagePosition({
       imageOnRight: false,
       imageOnLeft: false,
       noImageSelected: false,
@@ -220,7 +224,7 @@ const ColorState = ({ children }) => {
         showImage,
         filters,
         textColor,
-        imagePostion,
+        imagePosition,
         emptyFilter,
         applyFilters,
         onRemoveImage,

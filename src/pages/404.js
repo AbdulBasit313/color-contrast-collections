@@ -1,53 +1,49 @@
-import * as React from "react"
 import { Link } from "gatsby"
+import * as React from "react"
+import styled, { ThemeProvider } from "styled-components"
+import NoData from "../assets/images/no-data.svg"
+import { Container, GlobalStyles, PageCenter } from "../styles/Global"
+import { theme } from "../styles/Theme"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const SvgStyle = styled.div`
+  svg {
+    width: 100%;
+  }
+`
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Message = styled.h4`
+  font-size: 24px;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+  line-height: 1.3;
+`
 
-// markup
+const BackToHomeBtn = styled.button`
+  background: #f4b400;
+  color: #ffffff;
+  padding: 9px 30px;
+  border-radius: 6px;
+`
+
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Container>
+        <PageCenter>
+          <SvgStyle>
+            <NoData />
+          </SvgStyle>
+          <Message>Sorry, we didn't find any match!</Message>
+          <Link to="/">
+            <BackToHomeBtn>Back to Home</BackToHomeBtn>
+          </Link>
+        </PageCenter>
+      </Container>
+    </ThemeProvider>
   )
 }
 

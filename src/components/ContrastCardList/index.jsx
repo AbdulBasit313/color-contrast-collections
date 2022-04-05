@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { ColorContext } from "../../context/colors/colorContext"
 import { device } from "../../styles/BreakPoints"
 import ContrastCard from "../ContrastCard"
+import useColorContrast from "../../hooks/useColorContrast"
 
 const ContrastCardsWrapper = styled.div`
   margin-bottom: 70px;
@@ -23,13 +24,15 @@ function ContrastCardList() {
 
   return (
     <ContrastCardsWrapper>
-      {colorsData?.map(({ background, foreground }, index) => (
-        <ContrastCard
-          key={index}
-          foreground={foreground}
-          background={background}
-        />
-      ))}
+      {colorsData.map(({ background, foreground, id }) => {
+        return (
+          <ContrastCard
+            key={id}
+            foreground={foreground}
+            background={background}
+          />
+        )
+      })}
       {!colorsData.length && (
         <NoRecord>Sorry we didn't find any match</NoRecord>
       )}

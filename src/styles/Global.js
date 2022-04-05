@@ -120,6 +120,14 @@ export const Divider = styled.div`
   }
 `
 
+export const PageCenter = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
 export const AbsCenter = css`
   top: 50%;
   left: 50%;

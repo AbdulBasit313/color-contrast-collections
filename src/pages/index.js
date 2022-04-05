@@ -2,7 +2,7 @@ import * as React from "react"
 import { ThemeProvider } from "styled-components"
 import AppTitle from "../components/AppTitle"
 import ContrastCardList from "../components/ContrastCardList"
-import SdiebarFilters from "../components/Filters/SidebarFilters"
+import SidebarFilters from "../components/Filters/SidebarFilters"
 import SmallScreenFilter from "../components/Filters/SmallScreenFilter"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
@@ -15,8 +15,6 @@ import { Typography } from "../styles/Typography"
 
 const HomePage = () => {
   const [width] = useWindowSize()
-
-  console.log("page render")
 
   return (
     <>
@@ -32,13 +30,13 @@ const HomePage = () => {
             {/* <TopFilter /> */}
 
             <Divider>
-              {width > 768 && <SdiebarFilters />}
+              {width > 768 && <SidebarFilters />}
               <ContrastCardList />
             </Divider>
 
             {/* {width > 768 ? (
               <Divider>
-                <SdiebarFilters />
+                <SidebarFilters />
                 <ContrastCardList />
               </Divider>
             ) : (

@@ -11,6 +11,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    `gatsby-transformer-json`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -19,6 +20,12 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
