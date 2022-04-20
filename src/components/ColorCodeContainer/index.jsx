@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { device } from '../../styles/BreakPoints'
-import { AppBorder } from '../../styles/Global'
-import ColorCode from '../ColorCode'
-import CopyButton from '../CopyButton'
+import { device } from "../../styles/BreakPoints"
+import { AppBorder } from "../../styles/Global"
+import ColorCode from "../ColorCode"
+import CopyButton from "../CopyButton"
 
 const ColorCodeTitle = styled.p`
   font-size: 16px;
@@ -54,7 +54,11 @@ function ColorCodeContainer({ title, code }) {
     <section>
       <ColorCodeTitle>{title}</ColorCodeTitle>
       <ColorCodeWrapper>
-        <CopyButton text="Copy Color" code={code} handleCopyCode={handleCopyCode} />
+        <CopyButton
+          text="Copy Color"
+          code={code}
+          handleCopyCode={handleCopyCode}
+        />
         <ColorCode code={code} isCopied={isCopied} />
       </ColorCodeWrapper>
     </section>

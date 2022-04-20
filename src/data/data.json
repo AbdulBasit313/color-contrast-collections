@@ -20,6 +20,10 @@
     "foreground": "#FFFFFF"
   },
   {
+    "background": "#001e00",
+    "foreground": "#FFFFFF"
+  },
+  {
     "background": "#E4EBF3",
     "foreground": "#000000"
   },
@@ -184,6 +188,14 @@
     "foreground": "#5F5950"
   },
   {
+    "background": "#2d1004",
+    "foreground": "#f6f4e5"
+  },
+  {
+    "background": "#e9505a",
+    "foreground": "#ffffff"
+  },
+  {
     "background": "#0A2540",
     "foreground": "#FFFFFF"
   },
@@ -231,9 +243,12 @@
     "background": "#85859F",
     "foreground": "#FFFFFF"
   },
-
   {
     "background": "#F9FAFB",
     "foreground": "#3498DB"
+  },
+  {
+    "background": "#9B6A54",
+    "foreground": "#F6F4E5"
   }
 ]

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import styled from "styled-components"
-import useWindowSize from '../../hooks/useWindowSize'
-import { device } from '../../styles/BreakPoints'
-import CodeCard from '../CodeCard'
-import ColorCodeContainer from '../ColorCodeContainer'
-import CopyButton from '../CopyButton'
+import useWindowSize from "../../hooks/useWindowSize"
+import { device } from "../../styles/BreakPoints"
+import CodeCard from "../CodeCard"
+import ColorCodeContainer from "../ColorCodeContainer"
+import CopyButton from "../CopyButton"
 
 const ContrastCardSpecsContainer = styled.div`
   padding: 0 30px 10px 30px;
@@ -41,7 +41,7 @@ const ContrastCardSpecs = ({ foreground, background }) => {
           handleShowCode={handleShowCode}
           text="Show Code"
           bold
-          mt={width <= 768 ? '13px' : width <= 1440 ? '18px' : '24px'}
+          mt={width <= 768 ? "13px" : width <= 1440 ? "18px" : "24px"}
         />
       </div>
     </ContrastCardSpecsContainer>

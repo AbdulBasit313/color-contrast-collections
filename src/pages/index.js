@@ -22,28 +22,10 @@ const HomePage = () => {
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <ColorState>
-          {/* <Typography /> */}
           <Navbar />
           <Container>
             <AppTitle />
-            {width <= 768 && <SmallScreenFilter />}
-            {/* <TopFilter /> */}
-
-            <Divider>
-              {width > 768 && <SidebarFilters />}
-              <ContrastCardList />
-            </Divider>
-
-            {/* {width > 768 ? (
-              <Divider>
-                <SidebarFilters />
-                <ContrastCardList />
-              </Divider>
-            ) : (
-              <Divider>
-                <ContrastCardList />
-              </Divider>
-            )} */}
+            <ContrastCardList />
           </Container>
           <Footer />
         </ColorState>

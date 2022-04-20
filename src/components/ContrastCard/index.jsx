@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 import styled from "styled-components"
-import { device } from '../../styles/BreakPoints'
-import { AppBorder } from '../../styles/Global'
-import ContrastCardResult from '../ContrastCardResult'
-import ContrastCardSpecs from '../ContrastCardSpecs'
+import { device } from "../../styles/BreakPoints"
+import { AppBorder } from "../../styles/Global"
+import ContrastCardResult from "../ContrastCardResult"
+import ContrastCardSpecs from "../ContrastCardSpecs"
 
 const CardContainer = styled(AppBorder)`
   padding: 8px;
