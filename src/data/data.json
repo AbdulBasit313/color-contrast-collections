@@ -231,9 +231,12 @@
     "background": "#85859F",
     "foreground": "#FFFFFF"
   },
-
   {
     "background": "#F9FAFB",
     "foreground": "#3498DB"
+  },
+  {
+    "background": "#D9F99D",
+    "foreground": "#3F6212"
   }
 ]
