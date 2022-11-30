@@ -238,5 +238,25 @@
   {
     "background": "#D9F99D",
     "foreground": "#3F6212"
+  },
+  {
+    "background": "#F5F4F0",
+    "foreground": "#3B3E4F"
+  },
+  {
+    "background": "#FFE455",
+    "foreground": "#000000"
+  },
+  {
+    "background": "#FF5732",
+    "foreground": "#FFFFFF"
+  },
+  {
+    "background": "#09292B",
+    "foreground": "#FFFFFF"
+  },
+  {
+    "background": "#3B3E4F",
+    "foreground": "#D5D5D9"
   }
 ]
