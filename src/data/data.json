@@ -258,5 +258,13 @@
   {
     "background": "#3B3E4F",
     "foreground": "#D5D5D9"
+  },
+  {
+    "background": "#EDEFF5",
+    "foreground": "#212F4F"
+  },
+  {
+    "background": "#ECF6F2",
+    "foreground": "#212F4F"
   }
 ]
