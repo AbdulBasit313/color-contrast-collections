@@ -266,5 +266,129 @@
   {
     "background": "#ECF6F2",
     "foreground": "#212F4F"
+  },
+  {
+    "background": "#CDE3F7",
+    "foreground": "#1B2D4E"
+  },
+  {
+    "background": "#FFEDB5",
+    "foreground": "#694C00"
+  },
+  {
+    "background": "#541388",
+    "foreground": "#F7E9FD"
+  },
+  {
+    "background": "#CCFFCC",
+    "foreground": "#006600"
+  },
+  {
+    "background": "#FFD9E0",
+    "foreground": "#660033"
+  },
+  {
+    "background": "#7C0A02",
+    "foreground": "#FFDFD4"
+  },
+  {
+    "background": "#F1EDFF",
+    "foreground": "#574BAE"
+  },
+  {
+    "background": "#FFE8D1",
+    "foreground": "#6C2C00"
+  },
+  {
+    "background": "#2A4B7C",
+    "foreground": "#F0F4FF"
+  },
+  {
+    "background": "#A6FFCB",
+    "foreground": "#005B33"
+  },
+  {
+    "background": "#FFD8A8",
+    "foreground": "#4C2700"
+  },
+  {
+    "background": "#381460",
+    "foreground": "#DDE2FF"
+  },
+  {
+    "background": "#A3F7BF",
+    "foreground": "#0D4D31"
+  },
+  {
+    "background": "#FFE6FF",
+    "foreground": "#590059"
+  },
+  {
+    "background": "#595959",
+    "foreground": "#F7F7F7"
+  },
+  {
+    "background": "#CFF6FF",
+    "foreground": "#004459"
+  },
+  {
+    "background": "#FFEEE5",
+    "foreground": "#6B2100"
+  },
+  {
+    "background": "#0C0032",
+    "foreground": "#FFDFFF"
+  },
+  {
+    "background": "#FFC8C8",
+    "foreground": "#610B0B"
+  },
+  {
+    "background": "#7395AE",
+    "foreground": "#F7F9FA"
+  },
+  {
+    "background": "#FFC3F0",
+    "foreground": "#570037"
+  },
+  {
+    "background": "#121928",
+    "foreground": "#D5D6D9"
+  },
+  {
+    "background": "#FFD180",
+    "foreground": "#663C00"
+  },
+  {
+    "background": "#FFDCE5",
+    "foreground": "#661118"
+  },
+  {
+    "background": "#0A665B",
+    "foreground": "#E4FBF9"
+  },
+  {
+    "background": "#FFB9D4",
+    "foreground": "#610033"
+  },
+  {
+    "background": "#3D3D3D",
+    "foreground": "#F2F2F2"
+  },
+  {
+    "background": "#B5EAEA",
+    "foreground": "#003333"
+  },
+  {
+    "background": "#FFE0A3",
+    "foreground": "#663D00"
+  },
+  {
+    "background": "#53354A",
+    "foreground": "#F7E6F4"
+  },
+  {
+    "background": "#DAF9FF",
+    "foreground": "#002A33"
   }
 ]
